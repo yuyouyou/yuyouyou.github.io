@@ -6,17 +6,30 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yuyouyou.github.io">
-  <title>Archives | 努力奔跑的余幼幼</title>
+  <title>前端冷知识 | 努力奔跑的余幼幼</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="努力奔跑的余幼幼">
-<meta property="og:url" content="http://yuyouyou.github.io/archives/index.html">
+  <meta name="description" content="浏览器地址栏运行JavaScript代码
+1javascript:alert(&apos;hello from address bar :)&apos;);
+
+浏览器地址栏运行HTML代码
+1data:text/html,&amp;lt;h1&amp;gt;Hello, world!&amp;lt;/h1&amp;gt;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端冷知识">
+<meta property="og:url" content="http://yuyouyou.github.io/2016/02/18/third-article/index.html">
 <meta property="og:site_name" content="努力奔跑的余幼幼">
-<meta property="og:description" content="description">
+<meta property="og:description" content="浏览器地址栏运行JavaScript代码
+1javascript:alert(&apos;hello from address bar :)&apos;);
+
+浏览器地址栏运行HTML代码
+1data:text/html,&amp;lt;h1&amp;gt;Hello, world!&amp;lt;/h1&amp;gt;">
+<meta property="og:updated_time" content="2017-01-23T09:50:24.734Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="努力奔跑的余幼幼">
-<meta name="twitter:description" content="description">
+<meta name="twitter:title" content="前端冷知识">
+<meta name="twitter:description" content="浏览器地址栏运行JavaScript代码
+1javascript:alert(&apos;hello from address bar :)&apos;);
+
+浏览器地址栏运行HTML代码
+1data:text/html,&amp;lt;h1&amp;gt;Hello, world!&amp;lt;/h1&amp;gt;">
   
     <link rel="alternative" href="/atom.xml" title="努力奔跑的余幼幼" type="application/atom+xml">
   
@@ -146,36 +159,53 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-third-article" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/02/18/third-article/" class="archive-article-date">
-  	<time datetime="2016-02-18T02:44:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-02-18</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/02/18/third-article/">前端冷知识</a>
+    <h1 class="article-title" itemprop="name">
+      前端冷知识
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2016/02/18/third-article/" class="archive-article-date">
+  	<time datetime="2016-02-18T02:44:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-02-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li><p>浏览器地址栏运行JavaScript代码</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">javascript:alert(<span class="string">'hello from address bar :)'</span>);</div></pre></td></tr></table></figure>
+</li>
+<li><p>浏览器地址栏运行HTML代码</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">data:text/html,&lt;h1&gt;Hello, world!&lt;/h1&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<a id="more"></a>
+<ul>
+<li><p>把浏览器当编辑器</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">地址栏输入：data:text/html, &lt;html contenteditable&gt;</div><div class="line">控制台输入：<span class="built_in">document</span>.body.contentEditable=<span class="string">'true'</span>;</div></pre></td></tr></table></figure>
+</li>
+<li><p>实时编辑CSS</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line"> &lt;body&gt;</div><div class="line">    &lt;style style="display:block" contentEditable&gt;</div><div class="line">      body &#123; color: blue &#125;</div><div class="line">    &lt;/style&gt;</div><div class="line"> &lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>生成随机字符串</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">generateRandomAlphaNum</span>(<span class="params">len</span>) </span>&#123;</div><div class="line"> <span class="keyword">var</span> rdmString = <span class="string">""</span>;</div><div class="line"> <span class="keyword">for</span> (; rdmString.length &lt; len; rdmString += <span class="built_in">Math</span>.random().toString(<span class="number">36</span>).substr(<span class="number">2</span>));</div><div class="line"> <span class="keyword">return</span> rdmString.substr(<span class="number">0</span>, len);</div><div class="line">&#125;</div></pre></td></tr></table></figure></li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -187,105 +217,88 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yuyouyou.github.io/2016/02/18/third-article/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/02/10/second-article/" class="archive-article-date">
-  	<time datetime="2016-02-10T07:42:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-02-10</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/02/10/second-article/">hexo常用命令</a>
-    </h1>
+  
+    <a href="/2016/02/10/second-article/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">hexo常用命令</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+  
+    <div class="duoshuo"></div>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-      
-        </div></section>
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year">2015</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/09/23/first-article/" class="archive-article-date">
-  	<time datetime="2015-09-23T02:47:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-09-23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/09/23/first-article/">Window7 GitHub+Hexo搭建个人博客</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -308,8 +321,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
