@@ -18,7 +18,7 @@
 <meta property="og:description" content="日期格式
 
 12345678910111213141516171819&amp;#123;%$time|date_format:&apos;%Y-%m-%d&apos;%&amp;#125; 格式为2016-08-03&amp;#123;%$time|date_format:&apos;%H:%M:%S&apos;%&amp;#125; 格式为14:33:00常见的：%Y 年, 数字, 4 位%y 年, 数字, 2 位%m 月份, 数字(01……12)%c 月份,">
-<meta property="og:updated_time" content="2017-01-24T05:47:48.623Z">
+<meta property="og:updated_time" content="2017-01-24T05:47:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="smarty笔记(待续...)">
 <meta name="twitter:description" content="日期格式
@@ -72,6 +72,10 @@
     		
     			
     			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">所有文章</a>
+    			
+            
+    			
+    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">友链</a>
     			
             
     			
@@ -386,17 +390,25 @@
       
       
     
+      
+      
+      
+    
     
 
     <ul style="width: 70%">
     
     
       
-      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
       
         
       
-      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">友链</a></li>
+      
+        
+      
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
@@ -479,6 +491,18 @@
     	</section>
     
 
+    
+    	<section class="tools-section tools-section-friends" q-show="friends">
+  		
+        <ul class="search-ul">
+          
+            <li class="search-li">
+              <a href="https://zzhcoding.coding.me/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>黄油香蕉君</a>
+            </li>
+          
+        </ul>
+  		
+    	</section>
     
 
     

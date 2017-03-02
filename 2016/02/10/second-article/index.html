@@ -20,7 +20,7 @@ hexo init #初始化">
 npm install hexo -g #安装 
 npm update hexo -g #升级 
 hexo init #初始化">
-<meta property="og:updated_time" content="2017-01-23T09:50:24.741Z">
+<meta property="og:updated_time" content="2017-01-23T09:50:26.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo常用命令">
 <meta name="twitter:description" content="hexo
@@ -75,6 +75,10 @@ hexo init #初始化">
     		
     			
     			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">所有文章</a>
+    			
+            
+    			
+    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">友链</a>
     			
             
     			
@@ -309,7 +313,7 @@ hexo init #初始化">
   
   
     <a href="/2015/09/23/first-article/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Window7 GitHub+Hexo搭建个人博客</div>
+      <div class="article-nav-title">GitHub+Hexo搭建个人博客</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -391,17 +395,25 @@ hexo init #初始化">
       
       
     
+      
+      
+      
+    
     
 
     <ul style="width: 70%">
     
     
       
-      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
       
         
       
-      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">友链</a></li>
+      
+        
+      
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
@@ -484,6 +496,18 @@ hexo init #初始化">
     	</section>
     
 
+    
+    	<section class="tools-section tools-section-friends" q-show="friends">
+  		
+        <ul class="search-ul">
+          
+            <li class="search-li">
+              <a href="https://zzhcoding.coding.me/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>黄油香蕉君</a>
+            </li>
+          
+        </ul>
+  		
+    	</section>
     
 
     
