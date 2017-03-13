@@ -6,17 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yuyouyou.github.io">
-  <title>Archives: 2016/6 | 余幼幼的博客</title>
+  <title>函数节流与防抖 | 余幼幼的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="余幼幼的博客">
-<meta property="og:url" content="http://yuyouyou.github.io/archives/2016/06/index.html">
+  <meta name="description" content="函数节流我们网站经常会有这样的需求，就是滚动浏览器滚动条的时候，更新页面上的某些布局内容或者去调用后台的某接口查询内容。如果不对函数调用的频率加以限制的话，那么可能我们滚动一次滚动条就会产生N次的调用了。所以我们每间隔某个时间去执行某函数，避免函数的过多执行，这个方式就叫函数节流。为了更好的理解这个概念，我们先来完成一个小需求，就是浏览器滚动条在滚动过程中打印n值：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="函数节流与防抖">
+<meta property="og:url" content="http://yuyouyou.github.io/2017/03/13/eighth-article/index.html">
 <meta property="og:site_name" content="余幼幼的博客">
-<meta property="og:description" content="description">
+<meta property="og:description" content="函数节流我们网站经常会有这样的需求，就是滚动浏览器滚动条的时候，更新页面上的某些布局内容或者去调用后台的某接口查询内容。如果不对函数调用的频率加以限制的话，那么可能我们滚动一次滚动条就会产生N次的调用了。所以我们每间隔某个时间去执行某函数，避免函数的过多执行，这个方式就叫函数节流。为了更好的理解这个概念，我们先来完成一个小需求，就是浏览器滚动条在滚动过程中打印n值：">
+<meta property="og:image" content="http://yuyouyou.github.io/../images/eighth-1.png">
+<meta property="og:image" content="http://yuyouyou.github.io/../images/eighth-2.png">
+<meta property="og:updated_time" content="2017-03-13T02:41:46.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="余幼幼的博客">
-<meta name="twitter:description" content="description">
+<meta name="twitter:title" content="函数节流与防抖">
+<meta name="twitter:description" content="函数节流我们网站经常会有这样的需求，就是滚动浏览器滚动条的时候，更新页面上的某些布局内容或者去调用后台的某接口查询内容。如果不对函数调用的频率加以限制的话，那么可能我们滚动一次滚动条就会产生N次的调用了。所以我们每间隔某个时间去执行某函数，避免函数的过多执行，这个方式就叫函数节流。为了更好的理解这个概念，我们先来完成一个小需求，就是浏览器滚动条在滚动过程中打印n值：">
+<meta name="twitter:image" content="http://yuyouyou.github.io/../images/eighth-1.png">
   
     <link rel="alternative" href="/atom.xml" title="余幼幼的博客" type="application/atom+xml">
   
@@ -150,36 +154,43 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-eighth-article" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/06/08/sixth-article/" class="archive-article-date">
-  	<time datetime="2016-06-08T08:39:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-08</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/06/08/sixth-article/">浏览器的重绘与重排</a>
+    <h1 class="article-title" itemprop="name">
+      函数节流与防抖
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/03/13/eighth-article/" class="archive-article-date">
+  	<time datetime="2017-03-13T02:04:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="函数节流"><a href="#函数节流" class="headerlink" title="函数节流"></a>函数节流</h5><p>我们网站经常会有这样的需求，就是滚动浏览器滚动条的时候，更新页面上的某些布局内容或者去调用后台的某接口查询内容。如果不对函数调用的频率加以限制的话，那么可能我们滚动一次滚动条就会产生N次的调用了。所以我们每间隔某个时间去执行某函数，避免函数的过多执行，这个方式就叫函数节流。<br>为了更好的理解这个概念，我们先来完成一个小需求，就是浏览器滚动条在滚动过程中打印n值：<br><a id="more"></a><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;title&gt;函数节流与防抖&lt;/title&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body style="height:1000px"&gt;</div><div class="line">&lt;script type="text/javascript"&gt;</div><div class="line">    n=0;</div><div class="line">    function funHandler()&#123;</div><div class="line">        console.log(++n);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    window.onscroll=funHandler;</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
+<p>功能倒是实现了，但是看一下控制台可以发现频繁的在打印n值，如果我们的 funHandler() 方法是 ajax 向服务器发送请求，那还得了啊！</p>
+<p><img src="/../images/eighth-1.png" alt=""></p>
+<p>下面我们利用函数节流的两种方案来完成这个需求：<br>第一种是按照《JavaScript高级程序设计》中的函数节流方法，原理很简单，利用定时器，让函数执行延迟500毫秒，在500毫秒内如果有函数又被调用则删除上一次调用，这次调用500毫秒后执行，如此往复。这样我刚才的代码可以改为：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">    n=<span class="number">0</span>;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">funHandler</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(++n);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">throttle</span>(<span class="params">method,context</span>)</span>&#123;</div><div class="line">        clearTimeout(method.tId);</div><div class="line">        method.tId=setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            method.call(context);</div><div class="line">        &#125;,<span class="number">500</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="built_in">window</span>.onscroll=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        throttle(funHandler,<span class="built_in">window</span>);</div><div class="line">    &#125;;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></p>
+<p>滚动一下试试，果真只执行了一次</p>
+<p><img src="/../images/eighth-2.png" alt=""></p>
+<p>第二种是网上的一种节流方案，调试一下试试，效果和刚才是一样的：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">    n=<span class="number">0</span>;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">funHandler</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(++n);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">throttle</span>(<span class="params">method,delay</span>)</span>&#123;</div><div class="line">        <span class="keyword">var</span> timer=<span class="literal">null</span>;</div><div class="line">        <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            <span class="keyword">var</span> context=<span class="keyword">this</span>, args=<span class="built_in">arguments</span>;</div><div class="line">            clearTimeout(timer);</div><div class="line">            timer=setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">                method.apply(context,args);</div><div class="line">            &#125;,delay);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">window</span>.onscroll=throttle(funHandler,<span class="number">500</span>);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></p>
+<h5 id="函数防抖"><a href="#函数防抖" class="headerlink" title="函数防抖"></a>函数防抖</h5><p>再来一个类似的需求，就像百度首页输入自动提示一样的东西，我在text上绑定keyup事件，每次键盘弹起的时候自动提示，但是又不想提示那么频繁，于是我用了上面方法，但是悲剧了，只有停止输入等500毫秒才会提示，在输入过程中根本就没有提示。看了一下代码，可不是嘛，只要是用户会盲打，在500毫秒内按一下键盘，提示函数就会不断被延迟，这样只有停下来的时候才会提示，这就没意义了。这个时候就用到了函数防抖，函数防抖就是让某个函数在上一次执行后，满足等待某个时间内不再触发此函数后再执行，而在这个等待时间内再次触发此函数，等待时间会重新计算。其实它是在函数节流的基础上间隔固定时间来执行一次。如下所示：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">    n=<span class="number">0</span>;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">funHandler</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(++n);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">throttle</span>(<span class="params">method,delay,duration</span>)</span>&#123;</div><div class="line">        <span class="keyword">var</span> timer=<span class="literal">null</span>,</div><div class="line">        begin=<span class="keyword">new</span> <span class="built_in">Date</span>();<span class="comment">// 记录下开始执行函数的时间</span></div><div class="line">        <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            <span class="keyword">var</span> context=<span class="keyword">this</span>,</div><div class="line">            args=<span class="built_in">arguments</span>,</div><div class="line">            current=<span class="keyword">new</span> <span class="built_in">Date</span>();<span class="comment">// 记录下当前时间</span></div><div class="line">            <span class="comment">// 函数节流里的思路</span></div><div class="line">            clearTimeout(timer);</div><div class="line">            <span class="comment">// 记录下的两个时间相减再与duration进行比较</span></div><div class="line">            <span class="keyword">if</span>(current-begin&gt;=duration)&#123;</div><div class="line">                 method.apply(context,args);</div><div class="line">                 begin=current;</div><div class="line">            &#125;<span class="keyword">else</span>&#123;</div><div class="line">                timer=setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">                    method.apply(context,args);</div><div class="line">                &#125;,delay);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">&#125;</div><div class="line">    <span class="built_in">window</span>.onscroll=throttle(funHandler,<span class="number">500</span>,<span class="number">2000</span>);<span class="comment">//因为返回函数句柄，不用包装函数了</span></div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure></p>
+<p>这样每次我们判断间隔了多久，要是超过设置时间则立即执行一次，以刚才例子试一试效果，发现果真既没有频繁执行也没有就最后执行，感兴趣的朋友们可以试试哟！</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -189,25 +200,111 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yuyouyou.github.io/2017/03/13/eighth-article/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2017/03/02/seventh-article/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">charles使用教程</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+  
+    <div class="duoshuo">
+        <!-- 多说评论框 start -->
+            <div class="ds-thread" data-thread-key="eighth-article" data-title="函数节流与防抖" data-url="/2017/03/13/eighth-article/"></div>
+        <!-- 多说评论框 end -->
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+        var duoshuoQuery = {short_name:"yuyouyou"};
+            (function() {
+                var ds = document.createElement('script');
+                ds.type = 'text/javascript';ds.async = true;
+                ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+                ds.charset = 'UTF-8';
+                (document.getElementsByTagName('head')[0]
+                 || document.getElementsByTagName('body')[0]).appendChild(ds);
+            })();
+            </script>
+        <!-- 多说公共JS代码 end -->
+    </div>
   
 
-    
+
 
 
           </div>
@@ -230,8 +327,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
