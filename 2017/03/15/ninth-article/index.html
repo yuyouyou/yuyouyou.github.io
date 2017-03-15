@@ -6,17 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yuyouyou.github.io">
-  <title>Archives: 2016 | 余幼幼的博客</title>
+  <title>降低网页加载时间 | 余幼幼的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="余幼幼的博客">
-<meta property="og:url" content="http://yuyouyou.github.io/archives/2016/page/2/index.html">
+  <meta name="description" content="降低网页加载时间的方案太多了，在网上一查多的看不过来，所以我结合自身用到的以及网上的方案，来归纳一下吧，主要是一些前端能做的事情，以后get到新的方案，再不断添加吧。(╯▽╰)其实网页加载就是请求HTML，再顺带将它依赖的资源文件（比如：JS/CSS/iconfont）一并请求过来。从概念出发，我们就可以得出降低网页加载时间，最本质的方式就是：减少请求数量 与 减小请求大小。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="降低网页加载时间">
+<meta property="og:url" content="http://yuyouyou.github.io/2017/03/15/ninth-article/index.html">
 <meta property="og:site_name" content="余幼幼的博客">
-<meta property="og:description" content="description">
+<meta property="og:description" content="降低网页加载时间的方案太多了，在网上一查多的看不过来，所以我结合自身用到的以及网上的方案，来归纳一下吧，主要是一些前端能做的事情，以后get到新的方案，再不断添加吧。(╯▽╰)其实网页加载就是请求HTML，再顺带将它依赖的资源文件（比如：JS/CSS/iconfont）一并请求过来。从概念出发，我们就可以得出降低网页加载时间，最本质的方式就是：减少请求数量 与 减小请求大小。">
+<meta property="og:updated_time" content="2017-03-15T10:02:43.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="余幼幼的博客">
-<meta name="twitter:description" content="description">
+<meta name="twitter:title" content="降低网页加载时间">
+<meta name="twitter:description" content="降低网页加载时间的方案太多了，在网上一查多的看不过来，所以我结合自身用到的以及网上的方案，来归纳一下吧，主要是一些前端能做的事情，以后get到新的方案，再不断添加吧。(╯▽╰)其实网页加载就是请求HTML，再顺带将它依赖的资源文件（比如：JS/CSS/iconfont）一并请求过来。从概念出发，我们就可以得出降低网页加载时间，最本质的方式就是：减少请求数量 与 减小请求大小。">
   
     <link rel="alternative" href="/atom.xml" title="余幼幼的博客" type="application/atom+xml">
   
@@ -150,102 +151,165 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-ninth-article" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/02/18/third-article/" class="archive-article-date">
-  	<time datetime="2016-02-18T02:44:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-02-18</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/02/18/third-article/">前端冷知识(持续更新...)</a>
+    <h1 class="article-title" itemprop="name">
+      降低网页加载时间
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/03/15/ninth-article/" class="archive-article-date">
+  	<time datetime="2017-03-15T07:36:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>降低网页加载时间的方案太多了，在网上一查多的看不过来，所以我结合自身用到的以及网上的方案，来归纳一下吧，主要是一些前端能做的事情，以后get到新的方案，再不断添加吧。(╯▽╰)<br>其实网页加载就是请求HTML，再顺带将它依赖的资源文件（比如：JS/CSS/iconfont）一并请求过来。从概念出发，我们就可以得出降低网页加载时间，最本质的方式就是：减少请求数量 与 减小请求大小。<br><a id="more"></a><br>一、减少请求数量</p>
+<ul>
+<li>优化图像<br>1、将小图标合并成sprite图<br>我们可以把多张背景图片和小图标合并雪碧图，方便在任何位置使用，这样不同位置的请求只需要调用一个图片，从而减少对服务器的请求次数。<br>2、使用iconfont字体图标<br>sprite图不适合无线端的响应式场景，所以越来越作为一个备用方案，而很多时候可以用iconfont字体来代替一些小图标。它就是用字体编码的形式来实现图标效果，既然是文字，那就可以随意设置颜色设置大小，相对来说比sprite方案更好，但是它只适用于纯色图标。<br>3、base64:URL背景图片<br>使用base64图可以减少HTTP请求，还可以避免跨域的问题。不了解的可以直接点击：<a href="http://www.zhangxinxu.com/wordpress/2012/04/base64-url-image-%E5%9B%BE%E7%89%87-%E9%A1%B5%E9%9D%A2%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" target="_blank" rel="external">详情传送门</a><br>4、图片延迟加载<br>图片延迟加载也称懒加载，常用于页面很长，图片很多的页面，整个页面少说几百K，多则上兆，如果想一次性加载完成，不仅用户要哭了，服务器也得哭了。为了避免这种请况发生，目前主流的做法是页面初次加载时，只显示当前可视区域的图片，当用户滚动页面的时候，当图片进入可视区域时再加载，这样可以明显的提高页面加载速度，而更少的图片并发请求数，也可以大大的减轻服务器的压力。<br>5、标明图片高度和宽度<br>如果浏览器没有找到这两个参数，它需要一边下载图片一边计算大小，如果图片很多，浏览器需要不断地调整页面。这不但影响速度，也影响浏览体验。当浏览器知道了高度和宽度参数后，即使图片暂时无法显示，页面上也会腾出图片的空位，然后继续加载后面的内容。从而加载时间快了，浏览体验也更好了。</li>
+<li>Ajax调用尽量采用GET方法<br>实际使用XMLHttpRequest时，如果使用POST方法实现，会发生2次HTTP请求，而使用GET方法只会发生1次HTTP请求。如果改用GET方法，HTTP请求减少50%。</li>
+<li>避免使用@import<br>css @import语法允许你加载其它的CSS文件。有时非常有帮助，但是它并不是和主文件一起下载的，只有在引用它的那个css文件被下载、解析之后，浏览器才会知道还有另外一个css需要下载，这时才去下载，然后下载后开始解析、构建render tree等一系列操作，因此css @import引起的css解析延迟会加长页面留白期。 所以，要尽量避免使用css @import而采用link标签的方式引入。</li>
+</ul>
+<p>二、减小请求大小</p>
+<ul>
+<li>JS/CSS/HTML压缩<br>很多公司都采用了这个手段，就不介绍太多，主要的方式有：<br>1、通过构建工具实现，比如webpack/gulp/fis/grunt等。<br>2、后台预编译。<br>3、利用第三方online平台，手动上传压缩。</li>
+<li>图片压缩<br>同上可以手动处理图片或者借助第三方平台，手动处理的话推荐一个网站 <a href="https://tinypng.com/" target="_blank" rel="external">tinypng</a>，或者用第三方平台，比如七牛云平台。</li>
+</ul>
+<p>三、其他方案</p>
+<ul>
+<li>利用浏览器缓存<br>浏览器缓存是允许访客的浏览器缓存你网站页面副本的一个功能。这有助于访客再次访问时，直接从缓存中读取内容而不必重新加载。这节省了向服务器发送HTTP请求的时间。</li>
+<li>网址后加斜杠<br>当用户打开一个链接时，服务器会推测链接这个地址包含哪种文件或页面。如果在连接后加上斜线（ / ），服务器就知道这是一个目录页，这样做可以减少页面的加载时间。如www.baidu.com/目录，会判断这个“目录是什么文件类型，或者是目录。</li>
+<li>添加文件过期或缓存头<br>同一用户频繁访问的图片、Js脚本文件等可以在Apache或Nginx设置其缓冲 时间，例如设置24小时过期时间，这样用户在访问过该页面之后再次访问时，同一组图片或JS不会再重复下载，从而减少了HTTP请求，用户访问速度明显有 所提升，同时服务器负载也会下降。</li>
+<li>减少DNS查询<br>减少DNS查询是一个WEB开发人员可以用了页面加载时间快速有效的方法。DNS查询需要话费很长的时间来返回一个主机名的IP地址。而浏览器在查询结束前不会进行任何操作。对于不同的元素可以使用不同的主机名，如URL、图像、脚本文件、样式文件、FLASH元素等。具有多种网络元素的页面经常需要进行多个DNS查询，因而花费的时间更长。减少不同域名的数量将减少并行下载的数量，加速你的网站。</li>
+<li>最小化重定向<br>重定向增加了额外的HTTP请求，因此也增加了页面加载时间。然而有时重定向却是不可避免的，如链接网站的不同部分、保存多个域名、或者从不存在的页面跳转到新页面。重定向增加了延迟时间，因此要尽量避免使用它。检查是否有损坏的链接，并立即修复。</li>
+<li>CSS和JS的文件位置<br>把CSS文件在页面底部引入可以禁止逐步渲染，节省浏览器加载和重绘页面元素的资源。把JS文件放在页面底部可以避免代码执行前的等待时间，从而提升页面加载速度。但是在某些情况下，需要JS在页面的顶部加载（如某些第三方跟踪脚本）。</li>
+<li>延迟加载ga统计<br>ga统计代码不阻塞页面渲染，不阻塞后续请求，但会阻塞window.onload事件，页面的表现方式是进度条一直加载。所以我们延迟执行ga初始化代码，将其放到window.onload函数中去执行，可以防止ga脚本阻塞window.onload事件。</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">性能优化</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yuyouyou.github.io/2017/03/15/ninth-article/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/02/10/second-article/" class="archive-article-date">
-  	<time datetime="2016-02-10T07:42:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-02-10</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/02/10/second-article/">hexo常用命令</a>
-    </h1>
+  
+    <a href="/2017/03/13/eighth-article/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">函数节流与防抖</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+  
+    <div class="duoshuo">
+        <!-- 多说评论框 start -->
+            <div class="ds-thread" data-thread-key="ninth-article" data-title="降低网页加载时间" data-url="/2017/03/15/ninth-article/"></div>
+        <!-- 多说评论框 end -->
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+        var duoshuoQuery = {short_name:"yuyouyou"};
+            (function() {
+                var ds = document.createElement('script');
+                ds.type = 'text/javascript';ds.async = true;
+                ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+                ds.charset = 'UTF-8';
+                (document.getElementsByTagName('head')[0]
+                 || document.getElementsByTagName('body')[0]).appendChild(ds);
+            })();
+            </script>
+        <!-- 多说公共JS代码 end -->
+    </div>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/2016/">&laquo; Prev</a><a class="page-number" href="/archives/2016/">1</a><span class="page-number current">2</span>
-    </nav>
-  
 
 
           </div>
@@ -268,8 +332,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
