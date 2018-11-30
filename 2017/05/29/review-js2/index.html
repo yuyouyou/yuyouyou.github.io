@@ -6,17 +6,27 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yuyouyou.github.io">
-  <title>Archives | 余幼幼的博客</title>
+  <title>回顾JavaScript基础知识 — 原型和原型链 | 余幼幼的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="余幼幼的博客">
-<meta property="og:url" content="http://yuyouyou.github.io/archives/page/3/index.html">
+  <meta name="description" content="原型
+
+可以从下面这几个要点来理解，下面几条必须记住并且理解。
+1、所有的引用类型（数组、对象、函数），都具有对象特性，即可自由扩展属性（null除外）2、所有的引用类型（数组、对象、函数），都有一个__proto__属性，属性值是一个普通的对象3、所有的引用类型（数组、对象、函数），__proto__属性值指向它的构造函数的prototype属性值4、所有的函数，都有一个prototype属性">
+<meta property="og:type" content="article">
+<meta property="og:title" content="回顾JavaScript基础知识 — 原型和原型链">
+<meta property="og:url" content="http://yuyouyou.github.io/2017/05/29/review-js2/index.html">
 <meta property="og:site_name" content="余幼幼的博客">
-<meta property="og:description" content="description">
+<meta property="og:description" content="原型
+
+可以从下面这几个要点来理解，下面几条必须记住并且理解。
+1、所有的引用类型（数组、对象、函数），都具有对象特性，即可自由扩展属性（null除外）2、所有的引用类型（数组、对象、函数），都有一个__proto__属性，属性值是一个普通的对象3、所有的引用类型（数组、对象、函数），__proto__属性值指向它的构造函数的prototype属性值4、所有的函数，都有一个prototype属性">
+<meta property="og:updated_time" content="2018-11-30T07:19:59.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="余幼幼的博客">
-<meta name="twitter:description" content="description">
+<meta name="twitter:title" content="回顾JavaScript基础知识 — 原型和原型链">
+<meta name="twitter:description" content="原型
+
+可以从下面这几个要点来理解，下面几条必须记住并且理解。
+1、所有的引用类型（数组、对象、函数），都具有对象特性，即可自由扩展属性（null除外）2、所有的引用类型（数组、对象、函数），都有一个__proto__属性，属性值是一个普通的对象3、所有的引用类型（数组、对象、函数），__proto__属性值指向它的构造函数的prototype属性值4、所有的函数，都有一个prototype属性">
   
     <link rel="alternative" href="/atom.xml" title="余幼幼的博客" type="application/atom+xml">
   
@@ -150,154 +160,159 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-review-js2" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/03/02/charles/" class="archive-article-date">
-  	<time datetime="2017-03-02T09:20:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-02</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/03/02/charles/">charles使用教程</a>
+    <h1 class="article-title" itemprop="name">
+      回顾JavaScript基础知识 — 原型和原型链
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/05/29/review-js2/" class="archive-article-date">
+  	<time datetime="2017-05-29T02:11:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-29</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li><strong>原型</strong></li>
+</ul>
+<p>可以从下面这几个要点来理解，下面几条必须记住并且理解。</p>
+<p>1、所有的引用类型（数组、对象、函数），都具有对象特性，即可自由扩展属性（null除外）<br>2、所有的引用类型（数组、对象、函数），都有一个<code>__proto__</code>属性，属性值是一个普通的对象<br>3、所有的引用类型（数组、对象、函数），<code>__proto__</code>属性值指向它的构造函数的prototype属性值<br>4、所有的函数，都有一个prototype属性，属性值也是一个普通的对象<br><a id="more"></a><br>通过代码解释一下<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 自由扩展属性</span></div><div class="line"><span class="keyword">var</span> obj = &#123;&#125;; obj.a = <span class="number">100</span>;</div><div class="line"><span class="keyword">var</span> arr = []; arr.a = <span class="number">100</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span> (<span class="params"></span>) </span>&#123;&#125;</div><div class="line">fn.a = <span class="number">100</span>;</div><div class="line"></div><div class="line"><span class="comment">// __proto__</span></div><div class="line"><span class="built_in">console</span>.log(obj.__proto__);</div><div class="line"><span class="built_in">console</span>.log(arr.__proto__);</div><div class="line"><span class="built_in">console</span>.log(fn.__proto__);</div><div class="line"></div><div class="line"><span class="comment">// 引用类型的 __proto__ 属性值指向它的构造函数的 prototype 属性值</span></div><div class="line"><span class="built_in">console</span>.log(obj.__proto__ === <span class="built_in">Object</span>.prototype)</div><div class="line"></div><div class="line"><span class="comment">// 函数有 prototype</span></div><div class="line"><span class="built_in">console</span>.log(fn.prototype)</div></pre></td></tr></table></figure></p>
+<p>接下来看一个简单的代码示例：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 构造函数</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Foo</span>(<span class="params">name, age</span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.name = name</div><div class="line">&#125;</div><div class="line">Foo.prototype.alertName = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    alert(<span class="keyword">this</span>.name)</div><div class="line">&#125;</div><div class="line"><span class="comment">// 创建示例</span></div><div class="line"><span class="keyword">var</span> f = <span class="keyword">new</span> Foo(<span class="string">'yushuang'</span>)</div><div class="line">f.printName = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    alert(<span class="keyword">this</span>.name)</div><div class="line">&#125;</div><div class="line"><span class="comment">// 测试</span></div><div class="line">f.printName() <span class="comment">// yushuang</span></div><div class="line">f.alertName() <span class="comment">// yushuang</span></div></pre></td></tr></table></figure></p>
+<p>执行printName时很好理解，但是执行alertName时为什么是这个结果呢？这里再记住一个重点：当试图得到一个对象的某个属性时，如果这个对象本身没有这个属性，那么会去它的<code>__proto__</code>（即它的构造函数的prototype）中寻找，因此f.alertName就会找到Foo.prototype.alertName。</p>
+<ul>
+<li><strong>原型链</strong></li>
+</ul>
+<p>还是接着上面的示例，如果执行f.toString()，又会发生什么？为什么是这个结果呢？<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">f.toString() <span class="comment">// [object Object]</span></div></pre></td></tr></table></figure></p>
+<p>因为f本身没有toString()，并且<code>f.__proto__</code>（即Foo.prototype）中也没有toString。这个问题还是得拿出刚才那句话——当试图得到一个对象的某个属性时，如果这个对象本身没有这个属性，那么会去它的<code>__proto__</code>（即它的构造函数的prototype）中寻找。</p>
+<p>如果在<code>f.__proto__</code>中没有找到toString，那么就继续去<code>f.__proto__.__proto__</code>中寻找，因为<code>f.__proto__</code>就是一个普通的对象而已！</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;》<code>f.__proto__</code>即Foo.prototype，没有找到toString，继续往上找<br>&nbsp;&nbsp;&nbsp;&nbsp;》<code>f.__proto__.__proto__</code>即<code>Foo.prototype.__proto__</code>。Foo.prototype就是一个普通的对象，因此<code>Foo.prototype.__proto__</code>就是<code>Object.prototype</code>，在这里可以找到toString<br>&nbsp;&nbsp;&nbsp;&nbsp;》因此f.toString最终对应到了<code>Object.prototype.toString</code></p>
+<p>这样一直往上找，你会发现是一个链式的结构，所以叫做“原型链”。如果一直找到最上层都没有找到，那么就宣告失败，返回undefined。最上层是什么 —— <code>Object.prototype.__proto__ === null</code></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">抓包</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">网络</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yuyouyou.github.io/2017/05/29/review-js2/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-      
-        </div></section>
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/06/08/repaint-reflow/" class="archive-article-date">
-  	<time datetime="2016-06-08T08:39:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-08</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/06/08/repaint-reflow/">浏览器的重绘与重排</a>
-    </h1>
+  
+    <a href="/2017/05/28/review-js1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">回顾JavaScript基础知识 — 变量类型</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+  
+    <div class="duoshuo">
+        <!-- 多说评论框 start -->
+            <div class="ds-thread" data-thread-key="review-js2" data-title="回顾JavaScript基础知识 — 原型和原型链" data-url="/2017/05/29/review-js2/"></div>
+        <!-- 多说评论框 end -->
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+        var duoshuoQuery = {short_name:"yuyouyou"};
+            (function() {
+                var ds = document.createElement('script');
+                ds.type = 'text/javascript';ds.async = true;
+                ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+                ds.charset = 'UTF-8';
+                (document.getElementsByTagName('head')[0]
+                 || document.getElementsByTagName('body')[0]).appendChild(ds);
+            })();
+            </script>
+        <!-- 多说公共JS代码 end -->
+    </div>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">性能优化</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/04/05/windows-mongodb/" class="archive-article-date">
-  	<time datetime="2016-04-05T05:49:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-04-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/04/05/windows-mongodb/">windows下MongoDB的安装及配置</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">MongoDB</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/page/2/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><a class="page-number" href="/archives/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/archives/page/4/">4</a><a class="page-number" href="/archives/page/5/">5</a><a class="extend next" rel="next" href="/archives/page/4/">Next &raquo;</a>
-    </nav>
-  
 
 
           </div>
@@ -320,8 +335,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
