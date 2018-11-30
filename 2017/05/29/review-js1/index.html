@@ -6,17 +6,30 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yuyouyou.github.io">
-  <title>余幼幼的博客</title>
+  <title>回顾JavaScript基础知识 — 变量类型 | 余幼幼的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="余幼幼的博客">
-<meta property="og:url" content="http://yuyouyou.github.io/page/4/index.html">
+  <meta name="description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;JavaScript是一种弱类型脚本语言，所谓弱类型指的是定义变量时，不需要什么类型，在程序运行过程中会自动判断类型。
+
+原始类型
+
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;ECMAScript中定义了 6 种原始类型，分别是Boolean、String、Number、Null 、Undefined、Symbol。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="回顾JavaScript基础知识 — 变量类型">
+<meta property="og:url" content="http://yuyouyou.github.io/2017/05/29/review-js1/index.html">
 <meta property="og:site_name" content="余幼幼的博客">
-<meta property="og:description" content="description">
+<meta property="og:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;JavaScript是一种弱类型脚本语言，所谓弱类型指的是定义变量时，不需要什么类型，在程序运行过程中会自动判断类型。
+
+原始类型
+
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;ECMAScript中定义了 6 种原始类型，分别是Boolean、String、Number、Null 、Undefined、Symbol。">
+<meta property="og:updated_time" content="2018-11-30T06:19:01.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="余幼幼的博客">
-<meta name="twitter:description" content="description">
+<meta name="twitter:title" content="回顾JavaScript基础知识 — 变量类型">
+<meta name="twitter:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;JavaScript是一种弱类型脚本语言，所谓弱类型指的是定义变量时，不需要什么类型，在程序运行过程中会自动判断类型。
+
+原始类型
+
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;ECMAScript中定义了 6 种原始类型，分别是Boolean、String、Number、Null 、Undefined、Symbol。">
   
     <link rel="alternative" href="/atom.xml" title="余幼幼的博客" type="application/atom+xml">
   
@@ -150,39 +163,50 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-front-cold" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-review-js1" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/18/front-cold/">前端冷知识</a>
+    <h1 class="article-title" itemprop="name">
+      回顾JavaScript基础知识 — 变量类型
     </h1>
   
 
         
-        <a href="/2016/02/18/front-cold/" class="archive-article-date">
-  	<time datetime="2016-02-18T02:44:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-02-18</time>
+        <a href="/2017/05/29/review-js1/" class="archive-article-date">
+  	<time datetime="2017-05-28T18:21:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-29</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ul>
-<li><p>浏览器地址栏运行JavaScript代码</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">javascript:alert(<span class="string">'hello from address bar :)'</span>);</div></pre></td></tr></table></figure>
-</li>
-<li><p>浏览器地址栏运行HTML代码</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">data:text/html,&lt;h1&gt;Hello, world!&lt;/h1&gt;</div></pre></td></tr></table></figure>
-</li>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;JavaScript是一种弱类型脚本语言，所谓弱类型指的是定义变量时，不需要什么类型，在程序运行过程中会自动判断类型。</p>
+<ul>
+<li><strong>原始类型</strong></li>
 </ul>
-        
-          <a class="article-more-a" href="/2016/02/18/front-cold/#more">more >></a>
-        
+<p>&nbsp;&nbsp;&nbsp;&nbsp;ECMAScript中定义了 6 种原始类型，分别是Boolean、String、Number、Null 、Undefined、Symbol。<br><a id="more"></a></p>
+<ul>
+<li><strong>值类型 vs 引用类型</strong></li>
+</ul>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;根据JavaScript中的变量类型传递方式，又分为值类型和引用类型，值类型变量包括 Boolean、String、Number、Undefined、Null，引用类型包括了Object类的所有，如 Date、Array、Function等。在参数传递方式上，值类型是按值传递，引用类型是按共享传递。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;下面通过一个小题目，来看下两者的主要区别，以及实际开发中需要注意的地方。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 值类型</span></div><div class="line"><span class="keyword">var</span> a = <span class="number">10</span></div><div class="line"><span class="keyword">var</span> b = a</div><div class="line">b = <span class="number">20</span></div><div class="line"><span class="built_in">console</span>.log(a)  <span class="comment">// 10</span></div><div class="line"><span class="built_in">console</span>.log(b)  <span class="comment">// 20</span></div></pre></td></tr></table></figure></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;上述代码中，a b都是值类型，两者分别修改赋值，相互之间没有任何影响。再看引用类型的例子：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 引用类型</span></div><div class="line"><span class="keyword">var</span> a = &#123;<span class="attr">x</span>: <span class="number">10</span>, <span class="attr">y</span>: <span class="number">20</span>&#125;</div><div class="line"><span class="keyword">var</span> b = a</div><div class="line">b.x = <span class="number">100</span></div><div class="line">b.y = <span class="number">200</span></div><div class="line"><span class="built_in">console</span>.log(a)  <span class="comment">// &#123;x: 100, y: 200&#125;</span></div><div class="line"><span class="built_in">console</span>.log(b)  <span class="comment">// &#123;x: 100, y: 200&#125;</span></div></pre></td></tr></table></figure></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;上述代码中，a b都是引用类型。在执行了b = a之后，修改b的属性值，a的也跟着变化。因为a和b都是引用类型，指向了同一个内存地址，即两者引用的是同一个值，因此b修改属性时，a的值随之改动。<br>&nbsp;&nbsp;&nbsp;&nbsp;JS 中这种设计的原因是：按值传递的类型，复制一份存入栈内存，这类类型一般不占用太多内存，而且按值传递保证了其访问速度。按共享传递的类型，是复制其引用，而不是整个复制其值（C 语言中的指针），保证过大的对象等不会因为不停复制内容而造成内存的浪费。<br>&nbsp;&nbsp;&nbsp;&nbsp;引用类型经常会在代码中按照下面的写法使用，或者说容易不知不觉中造成错误！<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = &#123;</div><div class="line">    <span class="attr">a</span>: <span class="number">1</span>,</div><div class="line">    <span class="attr">b</span>: [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> a = obj.a</div><div class="line"><span class="keyword">var</span> b = obj.b</div><div class="line">a = <span class="number">2</span></div><div class="line">b.push(<span class="number">4</span>)</div><div class="line"><span class="built_in">console</span>.log(obj, a, b)</div></pre></td></tr></table></figure></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;虽然obj本身是个引用类型的变量（对象），但是内部的a和b一个是值类型一个是引用类型，a的赋值不会改变obj.a，但是b的操作却会反映到obj对象上。</p>
+<ul>
+<li><strong>判断类型</strong></li>
+</ul>
+<p>1、typeof</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;typeof返回一个表示数据类型的字符串，返回结果包括：number、string、boolean、object、undefined、function。typeof可以对基本类型number、string  、boolean、undefined做出准确的判断（null除外，typeof null===“object”)；而对于引用类型，除了function之外返回的都是object。但当我们需要知道某个对象的具体类型时，typeof就显得有些力不从心了。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">typeof</span> <span class="number">1</span>; <span class="comment">// number 有效</span></div><div class="line"><span class="keyword">typeof</span> ‘ ’;<span class="comment">//string 有效</span></div><div class="line"><span class="keyword">typeof</span> <span class="literal">true</span>; <span class="comment">//boolean 有效</span></div><div class="line"><span class="keyword">typeof</span> <span class="literal">undefined</span>; <span class="comment">//undefined 有效</span></div><div class="line"><span class="keyword">typeof</span> <span class="literal">null</span>; <span class="comment">//object 无效</span></div><div class="line"><span class="keyword">typeof</span> <span class="keyword">new</span> <span class="built_in">Function</span>(); <span class="comment">// function 有效</span></div><div class="line"><span class="keyword">typeof</span> [] ; <span class="comment">//object 无效</span></div><div class="line"><span class="keyword">typeof</span> <span class="keyword">new</span> <span class="built_in">Date</span>(); <span class="comment">//object 无效</span></div><div class="line"><span class="keyword">typeof</span> <span class="keyword">new</span> <span class="built_in">RegExp</span>(); <span class="comment">//object 无效</span></div></pre></td></tr></table></figure></p>
+<p>2、instanceof</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;instanceof用于实例和构造函数的对应，当我们需要知道某个对象的具体类型时,可以用运算符 instanceof，instanceof操作符判断左操作数对象的原型链上是否有右边这个构造函数的prototype属性，最后返回布尔值。 注意的是:instanceof运算符只能用于对象，不适用原始类型的值。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="string">'hello'</span> <span class="keyword">instanceof</span> <span class="built_in">String</span> <span class="comment">// false</span></div><div class="line"><span class="literal">null</span> <span class="keyword">instanceof</span> <span class="built_in">Object</span> <span class="comment">// false</span></div><div class="line"><span class="literal">undefined</span> <span class="keyword">instanceof</span> <span class="built_in">Object</span> <span class="comment">// false</span></div></pre></td></tr></table></figure></p>
+<p>3、Object.prototype.toString</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;toString是Object原型对象上的一个方法，该方法默认返回其调用者的具体类型，更严格的讲，是 toString运行时this指向的对象类型, 返回的类型格式为[object,xxx],xxx是具体的数据类型，其中包括：String,Number,Boolean,Undefined,Null,Function,Date,Array,RegExp,Error… 基本上所有对象的类型都可以通过这个方法获取到。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="string">''</span>) ;   <span class="comment">// [object String]</span></div><div class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="number">1</span>) ;    <span class="comment">// [object Number]</span></div><div class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="literal">true</span>) ; <span class="comment">// [object Boolean]</span></div><div class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="literal">undefined</span>) ; <span class="comment">// [object Undefined]</span></div><div class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="literal">null</span>) ; <span class="comment">// [object Null]</span></div><div class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="keyword">new</span> <span class="built_in">Function</span>()) ; <span class="comment">// [object Function]</span></div><div class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="keyword">new</span> <span class="built_in">Date</span>()) ; <span class="comment">// [object Date]</span></div><div class="line"><span class="built_in">Object</span>.prototype.toString.call([]) ; <span class="comment">// [object Array]</span></div><div class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="keyword">new</span> <span class="built_in">RegExp</span>()) ; <span class="comment">// [object RegExp]</span></div><div class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="keyword">new</span> <span class="built_in">Error</span>()) ; <span class="comment">// [object Error]</span></div></pre></td></tr></table></figure></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;为什么要用call()来获取呢？因为从原型链的角度讲，所有对象的原型链最终都指向了Object, 按照JS变量查找规则，其他对象应该也可以直接访问到Object的toString方法，而事实上，大部分的对象都实现了自身的toString方法，这样就可能会导致Object的toString被终止查找，因此要用call来强制执行Object的toString方法。</p>
+
       
 
       
@@ -195,7 +219,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
         		</li>
       		
 		</ul>
@@ -204,18 +228,74 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/02/18/front-cold/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yuyouyou.github.io/2017/05/29/review-js1/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
 
-
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2017/04/20/frond-UE/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">如何从细节上提升用户体验</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
 
 
@@ -223,162 +303,27 @@
 
 
   
-    <article id="post-hexo" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/10/hexo/">hexo常用命令</a>
-    </h1>
-  
-
-        
-        <a href="/2016/02/10/hexo/" class="archive-article-date">
-  	<time datetime="2016-02-10T07:42:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-02-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="hexo"><a href="#hexo" class="headerlink" title="hexo"></a>hexo</h5><ul>
-<li>npm install hexo -g #安装 </li>
-<li>npm update hexo -g #升级 </li>
-<li>hexo init #初始化</li>
-</ul>
-        
-          <a class="article-more-a" href="/2016/02/10/hexo/#more">more >></a>
-        
-      
-
-      
+    <div class="duoshuo">
+        <!-- 多说评论框 start -->
+            <div class="ds-thread" data-thread-key="review-js1" data-title="回顾JavaScript基础知识 — 变量类型" data-url="/2017/05/29/review-js1/"></div>
+        <!-- 多说评论框 end -->
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+        var duoshuoQuery = {short_name:"yuyouyou"};
+            (function() {
+                var ds = document.createElement('script');
+                ds.type = 'text/javascript';ds.async = true;
+                ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+                ds.charset = 'UTF-8';
+                (document.getElementsByTagName('head')[0]
+                 || document.getElementsByTagName('body')[0]).appendChild(ds);
+            })();
+            </script>
+        <!-- 多说公共JS代码 end -->
     </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/02/10/hexo/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-github-hexo" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/09/23/github-hexo/">GitHub+Hexo搭建个人博客</a>
-    </h1>
   
 
-        
-        <a href="/2015/09/23/github-hexo/" class="archive-article-date">
-  	<time datetime="2015-09-23T02:47:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-09-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h5><ul>
-<li>安装Git</li>
-<li>安装Node.js</li>
-</ul>
-<p>PS：傻瓜式的安装即可。。。</p>
-<h5 id="申请GitHub"><a href="#申请GitHub" class="headerlink" title="申请GitHub"></a>申请GitHub</h5><ul>
-<li>进入<a href="https://github.com/">GitHub</a>官网注册帐号</li>
-<li>注册完成后，点击”New repository”，新建一个版本库</li>
-</ul>
-<p><img src="/../images/first-1.png" alt=""></p>
-        
-          <a class="article-more-a" href="/2015/09/23/github-hexo/#more">more >></a>
-        
-      
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2015/09/23/github-hexo/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-  
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
-    </nav>
-  
-
-<script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?3a4e1ad0a1208dbdb5baa27e3f9c262d";
-  var s = document.getElementsByTagName("script")[0];
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
 
 
           </div>
@@ -400,8 +345,8 @@ var _hmt = _hmt || [];
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
