@@ -8,19 +8,19 @@
   <link rel="dns-prefetch" href="http://yuyouyou.github.io">
   <title>回顾JavaScript基础知识 — 变量提升 | 余幼幼的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="JavaScript 中，函数声明和变量声明总是会被解释器悄悄地”提升”到方法体的最顶部。JavaScript 中，变量可以在使用后声明，也就是变量可以先使用再声明。
-通过一个简单的代码示例解释一下">
+  <meta name="description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;JavaScript 中，函数声明和变量声明总是会被解释器悄悄地”提升”到方法体的最顶部。&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;JavaScript 中，变量可以在使用后声明，也就是变量可以先使用再声明。
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;通过一个简单的代码示例解释一下">
 <meta property="og:type" content="article">
 <meta property="og:title" content="回顾JavaScript基础知识 — 变量提升">
 <meta property="og:url" content="http://yuyouyou.github.io/2017/05/30/review-js3/index.html">
 <meta property="og:site_name" content="余幼幼的博客">
-<meta property="og:description" content="JavaScript 中，函数声明和变量声明总是会被解释器悄悄地”提升”到方法体的最顶部。JavaScript 中，变量可以在使用后声明，也就是变量可以先使用再声明。
-通过一个简单的代码示例解释一下">
-<meta property="og:updated_time" content="2018-11-30T08:37:05.000Z">
+<meta property="og:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;JavaScript 中，函数声明和变量声明总是会被解释器悄悄地”提升”到方法体的最顶部。&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;JavaScript 中，变量可以在使用后声明，也就是变量可以先使用再声明。
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;通过一个简单的代码示例解释一下">
+<meta property="og:updated_time" content="2018-11-30T09:41:35.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="回顾JavaScript基础知识 — 变量提升">
-<meta name="twitter:description" content="JavaScript 中，函数声明和变量声明总是会被解释器悄悄地”提升”到方法体的最顶部。JavaScript 中，变量可以在使用后声明，也就是变量可以先使用再声明。
-通过一个简单的代码示例解释一下">
+<meta name="twitter:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;JavaScript 中，函数声明和变量声明总是会被解释器悄悄地”提升”到方法体的最顶部。&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;JavaScript 中，变量可以在使用后声明，也就是变量可以先使用再声明。
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;通过一个简单的代码示例解释一下">
   
     <link rel="alternative" href="/atom.xml" title="余幼幼的博客" type="application/atom+xml">
   
@@ -167,19 +167,19 @@
 
         
         <a href="/2017/05/30/review-js3/" class="archive-article-date">
-  	<time datetime="2017-05-30T01:56:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-30</time>
+  	<time datetime="2017-05-30T13:56:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-30</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>JavaScript 中，函数声明和变量声明总是会被解释器悄悄地”提升”到方法体的最顶部。<br>JavaScript 中，变量可以在使用后声明，也就是变量可以先使用再声明。</p>
-<p>通过一个简单的代码示例解释一下<a id="more"></a><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(a)  <span class="comment">// undefined</span></div><div class="line"><span class="keyword">var</span> a = <span class="number">100</span></div><div class="line"></div><div class="line">fn(<span class="string">'zhangsan'</span>)  <span class="comment">// 'zhangsan' 20</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params">name</span>) </span>&#123;</div><div class="line">    age = <span class="number">20</span></div><div class="line">    <span class="built_in">console</span>.log(name, age)</div><div class="line">    <span class="keyword">var</span> age</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(b); <span class="comment">// 这里报错</span></div><div class="line"><span class="comment">// Uncaught ReferenceError: b is not defined</span></div><div class="line">b = <span class="number">100</span>;</div></pre></td></tr></table></figure></p>
-<p>在一段 JS 脚本（即一个<code>&lt;script&gt;</code>标签中）执行之前，要先解析代码（所以说 JS 是解释执行的脚本语言），解析的时候会先创建一个 <code>全局执行上下文</code> 环境，先把代码中即将执行的（内部函数的不算，因为你不知道函数何时执行）变量、函数声明都拿出来。变量先暂时赋值为undefined，函数则先声明好可使用。这一步做完了，然后再开始正式执行程序。再次强调，这是在代码执行之前才开始的工作。</p>
-<p>我们来看下上面的结果，为什么a是undefined，而b却报错了，实际 JS 在代码执行之前，要「全文解析」，发现var a，知道有个a的变量，存入了执行上下文，而b没有找到var关键字，这时候没有在执行上下文提前「占位」，所以代码执行的时候，提前报到的a是有记录的，只不过值暂时还没有赋值，即为undefined，而b在执行上下文没有找到，自然会报错（没有找到b的引用）。</p>
-<p>另外，一个函数在执行之前，也会创建一个 <code>函数执行上下文</code> 环境，跟 <code>全局上下文</code> 差不多，不过 函数执行上下文 中会多出this arguments和函数的参数。</p>
-<p>要注意的是： 只有声明的变量会提升，初始化的值不会，比如 a是undefined，而不是10，因为var a 提升了，但是值还在原处。</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;JavaScript 中，函数声明和变量声明总是会被解释器悄悄地”提升”到方法体的最顶部。<br>&nbsp;&nbsp;&nbsp;&nbsp;JavaScript 中，变量可以在使用后声明，也就是变量可以先使用再声明。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;通过一个简单的代码示例解释一下<a id="more"></a><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(a)  <span class="comment">// undefined</span></div><div class="line"><span class="keyword">var</span> a = <span class="number">100</span></div><div class="line"></div><div class="line">fn(<span class="string">'zhangsan'</span>)  <span class="comment">// 'zhangsan' 20</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params">name</span>) </span>&#123;</div><div class="line">    age = <span class="number">20</span></div><div class="line">    <span class="built_in">console</span>.log(name, age)</div><div class="line">    <span class="keyword">var</span> age</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(b); <span class="comment">// 这里报错</span></div><div class="line"><span class="comment">// Uncaught ReferenceError: b is not defined</span></div><div class="line">b = <span class="number">100</span>;</div></pre></td></tr></table></figure></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;在一段 JS 脚本（即一个<code>&lt;script&gt;</code>标签中）执行之前，要先解析代码（所以说 JS 是解释执行的脚本语言），解析的时候会先创建一个 <code>全局执行上下文</code> 环境，先把代码中即将执行的（内部函数的不算，因为你不知道函数何时执行）变量、函数声明都拿出来。变量先暂时赋值为undefined，函数则先声明好可使用。这一步做完了，然后再开始正式执行程序。再次强调，这是在代码执行之前才开始的工作。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;我们来看下上面的结果，为什么a是undefined，而b却报错了，实际 JS 在代码执行之前，要「全文解析」，发现var a，知道有个a的变量，存入了执行上下文，而b没有找到var关键字，这时候没有在执行上下文提前「占位」，所以代码执行的时候，提前报到的a是有记录的，只不过值暂时还没有赋值，即为undefined，而b在执行上下文没有找到，自然会报错（没有找到b的引用）。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;另外，一个函数在执行之前，也会创建一个 <code>函数执行上下文</code> 环境，跟 <code>全局上下文</code> 差不多，不过 函数执行上下文 中会多出this arguments和函数的参数。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;要注意的是： 只有声明的变量会提升，初始化的值不会，比如 a是undefined，而不是10，因为var a 提升了，但是值还在原处。</p>
 
       
 
@@ -262,6 +262,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2017/05/31/review-js4/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          回顾JavaScript基础知识 — 闭包和垃圾回收机制
+        
+      </div>
+    </a>
   
   
     <a href="/2017/05/29/review-js2/" id="article-nav-older" class="article-nav-link-wrap">
