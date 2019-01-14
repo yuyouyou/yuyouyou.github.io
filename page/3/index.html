@@ -152,6 +152,144 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-ajax-jsonp" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/12/ajax-jsonp/">jsonp 请求，捕获异常处理</a>
+    </h1>
+  
+
+        
+        <a href="/2017/06/12/ajax-jsonp/" class="archive-article-date">
+  	<time datetime="2017-06-12T15:31:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>问题：<br>&nbsp;&nbsp;&nbsp;&nbsp;ajax 用 jsonp 方式时，当请求的url为404或者50X时，不会执行 error 的回调事件。</p>
+<p>原因：<br>&nbsp;&nbsp;&nbsp;&nbsp;当资源404，或者报错的时候，也就是返回不成功的时候， jsonp 是无法得到状态，不会进 success，也不会进 error 方法。有人会说 script 的话，有 onerror 方法，但是这个方法有浏览器兼容问题。<br>
+        
+          <a class="article-more-a" href="/2017/06/12/ajax-jsonp/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">ajax</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">jsonp</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/06/12/ajax-jsonp/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-ajax-window-open" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/12/ajax-window-open/">Ajax请求成功后使用window.open()新开窗口被拦截</a>
+    </h1>
+  
+
+        
+        <a href="/2017/06/12/ajax-window-open/" class="archive-article-date">
+  	<time datetime="2017-06-12T15:01:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;我最近做一个下载文件需求时，使用 ajax 异步请求成功后新开窗口打开下载url，使用的是 window.open() 方法，发现浏览器会拦截，在网上找了很久的原因才知道：因为该操作并不是用户主动触发的，所以浏览器认为这是不安全的就拦截了，即使 ajax 回调函数中模拟执行 click 或者 submit 等用户行为（trigger(‘click’)），浏览器也会认为不是由用户主动触发的，因此不能被安全执行，所以被拦截。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;在网上找了很多解决办法，以下两个是最有效的，解决了我的问题：<br>
+        
+          <a class="article-more-a" href="/2017/06/12/ajax-window-open/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">ajax</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">window</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/06/12/ajax-window-open/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-review-js4" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -216,142 +354,9 @@
 
 
   
-    <article id="post-review-js3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/05/30/review-js3/">回顾JavaScript基础知识 — 变量提升</a>
-    </h1>
-  
-
-        
-        <a href="/2017/05/30/review-js3/" class="archive-article-date">
-  	<time datetime="2017-05-30T13:56:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;JavaScript 中，函数声明和变量声明总是会被解释器悄悄地”提升”到方法体的最顶部。<br>&nbsp;&nbsp;&nbsp;&nbsp;JavaScript 中，变量可以在使用后声明，也就是变量可以先使用再声明。</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;通过一个简单的代码示例解释一下
-        
-          <a class="article-more-a" href="/2017/05/30/review-js3/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/05/30/review-js3/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-review-js2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/05/29/review-js2/">回顾JavaScript基础知识 — 原型和原型链</a>
-    </h1>
-  
-
-        
-        <a href="/2017/05/29/review-js2/" class="archive-article-date">
-  	<time datetime="2017-05-29T14:11:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li><strong>原型</strong></li>
-</ul>
-<p>可以从下面这几个要点来理解，下面几条必须记住并且理解。</p>
-<p>1、所有的引用类型（数组、对象、函数），都具有对象特性，即可自由扩展属性（null除外）<br>2、所有的引用类型（数组、对象、函数），都有一个<code>__proto__</code>属性，属性值是一个普通的对象<br>3、所有的引用类型（数组、对象、函数），<code>__proto__</code>属性值指向它的构造函数的prototype属性值<br>4、所有的函数，都有一个prototype属性，属性值也是一个普通的对象<br>
-        
-          <a class="article-more-a" href="/2017/05/29/review-js2/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/05/29/review-js2/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
     </nav>
   
 
@@ -513,6 +518,26 @@ var _hmt = _hmt || [];
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">web安全</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">cookie</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">session</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">localStorage</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">sessionStorage</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">本地存储</a>
               </li>
             
             <div class="clearfix"></div>
