@@ -152,6 +152,136 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-repaint-reflow" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/08/repaint-reflow/">浏览器的重绘与重排</a>
+    </h1>
+  
+
+        
+        <a href="/2016/06/08/repaint-reflow/" class="archive-article-date">
+  	<time datetime="2016-06-08T08:39:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;在前端开发中，性能优化是非常重要的一个环节，而谈到性能优化，我们就不得不了解一下浏览器的重绘与重排概念。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;通常在 文档初次加载时，浏览器引擎会解析HTML文档来构建DOM树，之后根据DOM元素的几何属性构建一棵用于渲染的树。渲染树的每个节点都有大小和边距等属 性，类似于盒子模型（由于隐藏元素不需要显示，渲染树中并不包含DOM树中隐藏的元素）。当渲染树构建完成后，浏览器就可以将元素放置到正确的位置了，再 根据渲染树节点的样式属性绘制出页面。由于浏览器的流布局，对渲染树的计算通常只需要遍历一次就可以完成。但table及其内部元素除外，它可能需要多次 计算才能确定好其在渲染树中节点的属性，通常要花3倍于同等元素的时间。这也是为什么我们要避免使用table做布局的一个原因。</p>
+        
+          <a class="article-more-a" href="/2016/06/08/repaint-reflow/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">性能优化</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/06/08/repaint-reflow/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-windows-mongodb" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/05/windows-mongodb/">windows下MongoDB的安装及配置</a>
+    </h1>
+  
+
+        
+        <a href="/2016/04/05/windows-mongodb/" class="archive-article-date">
+  	<time datetime="2016-04-05T05:49:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-04-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1、进入mongodb官网进行软件包下载。</p>
+<p><img src="/../images/fifth-1.png" alt=""></p>
+        
+          <a class="article-more-a" href="/2016/04/05/windows-mongodb/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">MongoDB</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/04/05/windows-mongodb/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-smarty" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -202,145 +332,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2016/03/23/smarty/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-front-cold" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/18/front-cold/">前端冷知识</a>
-    </h1>
-  
-
-        
-        <a href="/2016/02/18/front-cold/" class="archive-article-date">
-  	<time datetime="2016-02-18T02:44:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-02-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li><p>浏览器地址栏运行JavaScript代码</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">javascript:alert(<span class="string">'hello from address bar :)'</span>);</div></pre></td></tr></table></figure>
-</li>
-<li><p>浏览器地址栏运行HTML代码</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">data:text/html,&lt;h1&gt;Hello, world!&lt;/h1&gt;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-        
-          <a class="article-more-a" href="/2016/02/18/front-cold/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/02/18/front-cold/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-hexo" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/10/hexo/">hexo常用命令</a>
-    </h1>
-  
-
-        
-        <a href="/2016/02/10/hexo/" class="archive-article-date">
-  	<time datetime="2016-02-10T07:42:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-02-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="hexo"><a href="#hexo" class="headerlink" title="hexo"></a>hexo</h5><ul>
-<li>npm install hexo -g #安装 </li>
-<li>npm update hexo -g #升级 </li>
-<li>hexo init #初始化</li>
-</ul>
-        
-          <a class="article-more-a" href="/2016/02/10/hexo/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/02/10/hexo/">展开全文 >></a>
         </p>
       
 

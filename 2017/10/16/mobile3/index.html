@@ -6,17 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yuyouyou.github.io">
-  <title>余幼幼的博客</title>
+  <title>解决移动端页面滚动后不触发touchend事件 | 余幼幼的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="余幼幼的博客">
-<meta property="og:url" content="http://yuyouyou.github.io/page/8/index.html">
+  <meta name="description" content="问题：&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;在移动端页面进行优化时，一般使用touch事件替代鼠标相关事件，用的较多的是使用touchend事件替代PC端的click和mouseup事件。&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;但是，touchend事件在页面滚动时有个问题。在滚动完成后，如果当前触点的位置所指的元素绑定了touchend事件，这时便会触发该元素的touchend">
+<meta property="og:type" content="article">
+<meta property="og:title" content="解决移动端页面滚动后不触发touchend事件">
+<meta property="og:url" content="http://yuyouyou.github.io/2017/10/16/mobile3/index.html">
 <meta property="og:site_name" content="余幼幼的博客">
-<meta property="og:description" content="description">
+<meta property="og:description" content="问题：&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;在移动端页面进行优化时，一般使用touch事件替代鼠标相关事件，用的较多的是使用touchend事件替代PC端的click和mouseup事件。&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;但是，touchend事件在页面滚动时有个问题。在滚动完成后，如果当前触点的位置所指的元素绑定了touchend事件，这时便会触发该元素的touchend">
+<meta property="og:updated_time" content="2019-01-15T03:39:54.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="余幼幼的博客">
-<meta name="twitter:description" content="description">
+<meta name="twitter:title" content="解决移动端页面滚动后不触发touchend事件">
+<meta name="twitter:description" content="问题：&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;在移动端页面进行优化时，一般使用touch事件替代鼠标相关事件，用的较多的是使用touchend事件替代PC端的click和mouseup事件。&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;但是，touchend事件在页面滚动时有个问题。在滚动完成后，如果当前触点的位置所指的元素绑定了touchend事件，这时便会触发该元素的touchend">
   
     <link rel="alternative" href="/atom.xml" title="余幼幼的博客" type="application/atom+xml">
   
@@ -150,32 +151,31 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-reduce-loading" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-mobile3" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/15/reduce-loading/">降低网页加载时间</a>
+    <h1 class="article-title" itemprop="name">
+      解决移动端页面滚动后不触发touchend事件
     </h1>
   
 
         
-        <a href="/2017/03/15/reduce-loading/" class="archive-article-date">
-  	<time datetime="2017-03-15T07:36:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-15</time>
+        <a href="/2017/10/16/mobile3/" class="archive-article-date">
+  	<time datetime="2017-10-16T06:54:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-16</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;降低网页加载时间的方案太多了，在网上一查多的看不过来，所以我结合自身用到的以及网上的方案，来归纳一下吧，主要是一些前端能做的事情，以后get到新的方案，再不断添加吧。(╯▽╰)<br>&nbsp;&nbsp;&nbsp;&nbsp;其实网页加载就是请求HTML，再顺带将它依赖的资源文件（比如：JS/CSS/iconfont）一并请求过来。从概念出发，我们就可以得出降低网页加载时间，最本质的方式就是：减少请求数量 与 减小请求大小。<br>
-        
-          <a class="article-more-a" href="/2017/03/15/reduce-loading/#more">more >></a>
-        
+        <p>问题：<br>&nbsp;&nbsp;&nbsp;&nbsp;在移动端页面进行优化时，一般使用touch事件替代鼠标相关事件，用的较多的是使用touchend事件替代PC端的click和mouseup事件。<br>&nbsp;&nbsp;&nbsp;&nbsp;但是，touchend事件在页面滚动时有个问题。在滚动完成后，如果当前触点的位置所指的元素绑定了touchend事件，这时便会触发该元素的touchend事件，造成误操作。<br><a id="more"></a><br>解决方法：<br>&nbsp;&nbsp;&nbsp;&nbsp;解决方法很简单，就是在页面滚动时停止touchend事件冒泡，这样就可以防止触发touchend事件。</p>
+<p>使用方法：<br>&nbsp;&nbsp;&nbsp;&nbsp;引入该函数并进行调用。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">stopTouchendPropagationAfterScroll</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> locked = <span class="literal">false</span>;</div><div class="line"></div><div class="line">    <span class="built_in">window</span>.addEventListener(<span class="string">'touchmove'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">ev</span>)</span>&#123;</div><div class="line">        locked || (locked = <span class="literal">true</span>, <span class="built_in">window</span>.addEventListener(<span class="string">'touchend'</span>, stopTouchendPropagation, <span class="literal">true</span>));</div><div class="line">    &#125;, <span class="literal">true</span>);</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">stopTouchendPropagation</span>(<span class="params">ev</span>)</span>&#123;</div><div class="line">        ev.stopPropagation();</div><div class="line">        <span class="built_in">window</span>.removeEventListener(<span class="string">'touchend'</span>, stopTouchendPropagation, <span class="literal">true</span>);</div><div class="line">        locked = <span class="literal">false</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>另外说明：<br>&nbsp;&nbsp;&nbsp;&nbsp;在移动端，scroll事件是在滚动结束后才会触发一次，而touchmove事件是在滑动过程中多次触发，使用scroll会比使用touchmove在性能上有一定优化。但是，上面代码之所以不用scroll事件，而用touchmove事件，是为了同时适用于小于一个屏幕高度的页面，所以也是不得已使用touchmove。</p>
+<p>原文：<a href="https://blog.csdn.net/yhb241/article/details/47447337" target="_blank" rel="external">https://blog.csdn.net/yhb241/article/details/47447337</a></p>
+
       
 
       
@@ -188,7 +188,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">性能优化</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">mobile</a>
         		</li>
       		
 		</ul>
@@ -197,18 +197,74 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/03/15/reduce-loading/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yuyouyou.github.io/2017/10/16/mobile3/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
 
-
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2017/09/27/mobile2/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">各种尺寸单位(笔记)</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
 
 
@@ -216,157 +272,27 @@
 
 
   
-    <article id="post-throttle" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/13/throttle/">函数节流与防抖</a>
-    </h1>
-  
-
-        
-        <a href="/2017/03/13/throttle/" class="archive-article-date">
-  	<time datetime="2017-03-13T02:04:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="函数节流"><a href="#函数节流" class="headerlink" title="函数节流"></a>函数节流</h5><p>&nbsp;&nbsp;&nbsp;&nbsp;我们网站经常会有这样的需求，就是滚动浏览器滚动条的时候，更新页面上的某些布局内容或者去调用后台的某接口查询内容。如果不对函数调用的频率加以限制的话，那么可能我们滚动一次滚动条就会产生N次的调用了。所以我们每间隔某个时间去执行某函数，避免函数的过多执行，这个方式就叫函数节流。<br>为了更好的理解这个概念，我们先来完成一个小需求，就是浏览器滚动条在滚动过程中打印n值：<br>
-        
-          <a class="article-more-a" href="/2017/03/13/throttle/#more">more >></a>
-        
-      
-
-      
+    <div class="duoshuo">
+        <!-- 多说评论框 start -->
+            <div class="ds-thread" data-thread-key="mobile3" data-title="解决移动端页面滚动后不触发touchend事件" data-url="/2017/10/16/mobile3/"></div>
+        <!-- 多说评论框 end -->
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+        var duoshuoQuery = {short_name:"yuyouyou"};
+            (function() {
+                var ds = document.createElement('script');
+                ds.type = 'text/javascript';ds.async = true;
+                ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+                ds.charset = 'UTF-8';
+                (document.getElementsByTagName('head')[0]
+                 || document.getElementsByTagName('body')[0]).appendChild(ds);
+            })();
+            </script>
+        <!-- 多说公共JS代码 end -->
     </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">性能优化</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/03/13/throttle/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-charles" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/02/charles/">charles使用教程</a>
-    </h1>
   
 
-        
-        <a href="/2017/03/02/charles/" class="archive-article-date">
-  	<time datetime="2017-03-02T09:20:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;记得我大三的时候有一门课叫计算机网络,是我最喜欢的王勇老师上的,当时勇哥给我们介绍了抓包工具,也是我第一次接触这玩意儿,当时用的wireshark,除了这个工具的名字貌似我什么都不记得了(&gt;_&lt;|||)。当时觉得这个工具应该和我以后的工作没多大联系吧,没想到出来做前端后,经常要用到抓包工具,特别是用来进行前端调试,觉得太赞了,我们可以用本地的文件来替换线上的文件,从而修复一些bug,还可以模拟不同的网络环境,或者设置网络请求。。。推荐一下我常用的两款抓包工具吧,一是fiddler,再就是我接下来介绍的charles。
-        
-          <a class="article-more-a" href="/2017/03/02/charles/#more">more >></a>
-        
-      
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">抓包</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">网络</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/03/02/charles/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-  
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/7/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/9/">Next &raquo;</a>
-    </nav>
-  
-
-<script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?3a4e1ad0a1208dbdb5baa27e3f9c262d";
-  var s = document.getElementsByTagName("script")[0];
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
 
 
           </div>
@@ -388,8 +314,8 @@ var _hmt = _hmt || [];
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
