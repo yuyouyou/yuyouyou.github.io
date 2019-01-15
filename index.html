@@ -152,6 +152,92 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-mobile" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/23/mobile/">移动WEB常见问题解决方案</a>
+    </h1>
+  
+
+        
+        <a href="/2017/09/23/mobile/" class="archive-article-date">
+  	<time datetime="2017-09-23T13:02:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1、H5页面窗口自动调整到设备宽度，并禁止用户缩放页面<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta name=<span class="string">"viewport"</span> content=<span class="string">"width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"</span> /&gt;</div></pre></td></tr></table></figure></p>
+<p>2、忽略将页面中的数字识别为电话号码<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta name=<span class="string">"format-detection"</span> content=<span class="string">"telephone=no"</span> /&gt;</div></pre></td></tr></table></figure></p>
+<p>3、忽略Android平台中对邮箱地址的识别<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta name=<span class="string">"format-detection"</span> content=<span class="string">"email=no"</span> /&gt;</div></pre></td></tr></table></figure></p>
+<p>4、设置Web应用是否以全屏模式运行<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta name=<span class="string">"apple-mobile-web-app-capable"</span> content=<span class="string">"yes"</span>&gt;</div></pre></td></tr></table></figure></p>
+<p>5、调用安卓或者ios的拨号功能<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;a href=<span class="string">"tel:10086"</span>&gt;点击拨打<span class="number">10086</span>&lt;<span class="regexp">/a&gt;</span></div></pre></td></tr></table></figure></p>
+<p>6、禁止复制、选中文本<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">element &#123;</div><div class="line">  -webkit-user-select: none;</div><div class="line">  -moz-user-select: none;</div><div class="line">  -khtml-user-select: none;</div><div class="line">   user-select: none;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>7、长时间按住页面出现闪退、禁止ios&amp;android长按时下载图片<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">-webkit-touch-callout: none;</div></pre></td></tr></table></figure></p>
+<p>8、iphone及ipad下输入框默认内阴影<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">-webkit-appearance: none;</div></pre></td></tr></table></figure></p>
+<p>9、ios和android下触摸元素时出现半透明灰色遮罩<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">-webkit-tap-highlight-color:rgba(<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">0</span>);</div></pre></td></tr></table></figure></p>
+<p>10、动画定义3D启用硬件加速<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">-webkit-transform:translate3d(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>);</div><div class="line">transform: translate3d(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>);</div></pre></td></tr></table></figure></p>
+<p>11、Retina屏的1px边框<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">border-width: thin;</div></pre></td></tr></table></figure></p>
+<p>12、旋转屏幕时，字体大小调整的问题<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">html, body, form, fieldset, p, div, h1, h2, h3, h4, h5, h6 &#123;</div><div class="line">  -webkit-text-size-adjust:<span class="number">100</span>%;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>13、transition闪屏<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">-webkit-transform-style: preserve<span class="number">-3</span>d;</div><div class="line">-webkit-backface-visibility:hidden;</div></pre></td></tr></table></figure></p>
+<p>14、某些Android手机圆角失效<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">background-clip: padding-box;</div></pre></td></tr></table></figure></p>
+<p>15、ios 设置input 按钮样式会被默认样式覆盖<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">input,</div><div class="line">textarea &#123;</div><div class="line">  <span class="attr">border</span>: <span class="number">0</span>;</div><div class="line">  -webkit-appearance: none;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>16、IOS键盘字母输入，默认首字母大写<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;input type=<span class="string">"text"</span> autocapitalize=<span class="string">"off"</span> /&gt;</div></pre></td></tr></table></figure></p>
+<p>17、select 下拉选择设置右对齐<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">select option &#123;</div><div class="line"><span class="attr">direction</span>: rtl;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>18、通过transform进行skew变形，rotate旋转会造成出现锯齿现象<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">-webkit-transform: rotate(<span class="number">-4</span>deg) skew(<span class="number">10</span>deg) translateZ(<span class="number">0</span>);</div><div class="line">transform: rotate(<span class="number">-4</span>deg) skew(<span class="number">10</span>deg) translateZ(<span class="number">0</span>);</div><div class="line">outline: <span class="number">1</span>px solid rgba(<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">0</span>)</div></pre></td></tr></table></figure></p>
+<p>19、关于 iOS 系统中，中文输入法输入英文时，字母之间可能会出现一个六分之一空格<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>.value = <span class="keyword">this</span>.value.replace(<span class="regexp">/\u2006/g</span>, <span class="string">''</span>);</div></pre></td></tr></table></figure></p>
+<p>20、IOS中input键盘事件keyup、keydown、keypress支持不是很好<br>&nbsp;&nbsp;&nbsp;&nbsp;问题是这样的，用input search做模糊搜索的时候，在键盘里面输入关键词，会通过ajax后台查询，然后返回数据，然后再对返回的数据进行关键词标红。用input监听键盘keyup事件，在安卓手机浏览器中是可以的，但是在ios手机浏览器中变红很慢，用输入法输入之后，并未立刻相应keyup事件，只有在通过删除之后才能相应！可以用html5的oninput事件去代替keyup:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;input type=<span class="string">"text"</span> id=<span class="string">"testInput"</span>&gt;</div><div class="line">&lt;script type="text/javascript"&gt;</div><div class="line">  document.getElementById('testInput').addEventListener('input', function(e)&#123;</div><div class="line">    var value = e.target.value;</div><div class="line">  &#125;);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></p>
+<p>21、部分机型存在type为search的input，自带close按钮样式修改方法<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">#Search::-webkit-search-cancel-button&#123;</div><div class="line">  display: none;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>22、改变webkit表单输入框placeholder的颜色<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">input::-webkit-input-placeholder&#123;color:#aaa;&#125;</div><div class="line">input:focus::-webkit-input-placeholder&#123;color:#eee;&#125;</div></pre></td></tr></table></figure></p>
+<p>23、android 上去掉语音输入按钮<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">input::-webkit-input-speech-button &#123;<span class="attr">display</span>: none&#125;</div></pre></td></tr></table></figure></p>
+<p>24、android浏览器下，input域处于焦点状态时，默认会有一圈淡黄色的轮廓outline效果<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">outline: none;</div></pre></td></tr></table></figure></p>
+<p>25、控制元素在移动设备上是否使用滚动回弹效果<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">auto 使用普通滚动, 当手指从触摸屏上移开，滚动会立即停止</div><div class="line">touch 使用具有回弹效果的滚动, 当手指从触摸屏上移开，内容会继续保持一段时间的滚动效果。继续滚动的速度和持续的时间和滚动手势的强烈程度成正比。同时也会创建一个新的堆栈上下文</div></pre></td></tr></table></figure></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">mobile</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/09/23/mobile/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-js-notification" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -265,72 +351,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2017/07/23/css-align/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-BFC-IFC" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/23/BFC-IFC/">BFC和IFC(笔记)</a>
-    </h1>
-  
-
-        
-        <a href="/2017/07/23/BFC-IFC/" class="archive-article-date">
-  	<time datetime="2017-07-23T02:12:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>一、BFC</p>
-<p>什么是BFC？BFC的全称是Block Formatting Context，直译过来是：块级格式化上下文。</p>
-<p>BFC的布局规矩：
-        
-          <a class="article-more-a" href="/2017/07/23/BFC-IFC/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">布局</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/23/BFC-IFC/">展开全文 >></a>
         </p>
       
 
@@ -540,6 +560,10 @@ var _hmt = _hmt || [];
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">notification</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">mobile</a>
               </li>
             
             <div class="clearfix"></div>
