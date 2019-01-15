@@ -9,18 +9,18 @@
   <title>移动WEB常见问题解决方案 | 余幼幼的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="1、H5页面窗口自动调整到设备宽度，并禁止用户缩放页面1&amp;lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no&quot; /&amp;gt;
-2、忽略将页面中的数字识别为电话号码1&amp;lt;meta name=&quot;format-">
+2、忽略将页面中的数字识别为电话号码">
 <meta property="og:type" content="article">
 <meta property="og:title" content="移动WEB常见问题解决方案">
 <meta property="og:url" content="http://yuyouyou.github.io/2017/09/23/mobile/index.html">
 <meta property="og:site_name" content="余幼幼的博客">
 <meta property="og:description" content="1、H5页面窗口自动调整到设备宽度，并禁止用户缩放页面1&amp;lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no&quot; /&amp;gt;
-2、忽略将页面中的数字识别为电话号码1&amp;lt;meta name=&quot;format-">
-<meta property="og:updated_time" content="2019-01-15T02:45:01.000Z">
+2、忽略将页面中的数字识别为电话号码">
+<meta property="og:updated_time" content="2019-01-15T02:51:31.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="移动WEB常见问题解决方案">
 <meta name="twitter:description" content="1、H5页面窗口自动调整到设备宽度，并禁止用户缩放页面1&amp;lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no&quot; /&amp;gt;
-2、忽略将页面中的数字识别为电话号码1&amp;lt;meta name=&quot;format-">
+2、忽略将页面中的数字识别为电话号码">
   
     <link rel="alternative" href="/atom.xml" title="余幼幼的博客" type="application/atom+xml">
   
@@ -175,7 +175,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>1、H5页面窗口自动调整到设备宽度，并禁止用户缩放页面<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta name=<span class="string">"viewport"</span> content=<span class="string">"width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"</span> /&gt;</div></pre></td></tr></table></figure></p>
-<p>2、忽略将页面中的数字识别为电话号码<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta name=<span class="string">"format-detection"</span> content=<span class="string">"telephone=no"</span> /&gt;</div></pre></td></tr></table></figure></p>
+<p>2、忽略将页面中的数字识别为电话号码<a id="more"></a><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta name=<span class="string">"format-detection"</span> content=<span class="string">"telephone=no"</span> /&gt;</div></pre></td></tr></table></figure></p>
 <p>3、忽略Android平台中对邮箱地址的识别<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta name=<span class="string">"format-detection"</span> content=<span class="string">"email=no"</span> /&gt;</div></pre></td></tr></table></figure></p>
 <p>4、设置Web应用是否以全屏模式运行<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta name=<span class="string">"apple-mobile-web-app-capable"</span> content=<span class="string">"yes"</span>&gt;</div></pre></td></tr></table></figure></p>
 <p>5、调用安卓或者ios的拨号功能<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;a href=<span class="string">"tel:10086"</span>&gt;点击拨打<span class="number">10086</span>&lt;<span class="regexp">/a&gt;</span></div></pre></td></tr></table></figure></p>
@@ -199,6 +199,17 @@
 <p>23、android 上去掉语音输入按钮<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">input::-webkit-input-speech-button &#123;<span class="attr">display</span>: none&#125;</div></pre></td></tr></table></figure></p>
 <p>24、android浏览器下，input域处于焦点状态时，默认会有一圈淡黄色的轮廓outline效果<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">outline: none;</div></pre></td></tr></table></figure></p>
 <p>25、控制元素在移动设备上是否使用滚动回弹效果<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">auto 使用普通滚动, 当手指从触摸屏上移开，滚动会立即停止</div><div class="line">touch 使用具有回弹效果的滚动, 当手指从触摸屏上移开，内容会继续保持一段时间的滚动效果。继续滚动的速度和持续的时间和滚动手势的强烈程度成正比。同时也会创建一个新的堆栈上下文</div></pre></td></tr></table></figure></p>
+<p>26、页面滚动不流畅，卡顿闪烁</p>
+<ul>
+<li><p>ios端的-webkit-overflow-scrolling属性可控制页面滚动效果，设置如下实现惯性滚动和弹性效果：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">-webkit-overflow-scrolling: touch</div></pre></td></tr></table></figure>
+</li>
+<li><p>position属性导致的页面滚动不流畅问题：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;div style=<span class="string">"overflow-x: hidden; overflow-y: auto; position: absolute; height: 200px;"</span>&gt;</div><div class="line">    &lt;div style="position: relative; height: 200px;"&gt;&lt;/div&gt;</div><div class="line">    &lt;div style=<span class="string">"position: relative; height: 200px;"</span>&gt;&lt;/div&gt;</div><div class="line">    &lt;div style=<span class="string">"position: relative; height: 200px;"</span>&gt;&lt;/div&gt;</div><div class="line">&lt;<span class="regexp">/div&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>如上代码所示，当absolute定位的容器内存在relative定位并且高度大于外置容器时，容器的滚动会出现卡顿闪烁现象，解决方法如下所示：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;div style=<span class="string">"overflow-x: hidden; overflow-y: auto; position: absolute; height: 200px;"</span>&gt;</div><div class="line">    &lt;div style="position: absolute; top: 0; left: 0;"&gt;</div><div class="line">        &lt;div style="position: relative; height: 200px;"&gt;&lt;/div&gt;</div><div class="line">        &lt;div style="position: relative; height: 200px;"&gt;&lt;/div&gt;</div><div class="line">        &lt;div style="position: relative; height: 200px;"&gt;&lt;/div&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">&lt;<span class="regexp">/div&gt;</span></div></pre></td></tr></table></figure></p>
+<p>可以用一个absolute容器将内部relative元素包裹起来，便可解决滚动闪烁问题。</p>
 
       
 
@@ -281,6 +292,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2017/09/27/mobile1/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          H5 input type=search 搜索按钮的设置
+        
+      </div>
+    </a>
   
   
     <a href="/2017/09/11/js-notification/" id="article-nav-older" class="article-nav-link-wrap">

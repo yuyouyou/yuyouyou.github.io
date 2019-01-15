@@ -6,17 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yuyouyou.github.io">
-  <title>余幼幼的博客</title>
+  <title>H5 input type=search 搜索按钮的设置 | 余幼幼的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="余幼幼的博客">
-<meta property="og:url" content="http://yuyouyou.github.io/page/4/index.html">
+  <meta name="description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;最近遇到一个关于input type=search的问题，在网上找到一个很好的解决方案，贴出来记录一下。
+问题：&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;设计搜索框时，如果单单使用input type=search 会导致一些手机的输入法不显示搜索按钮只显示换行如：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="H5 input type=search 搜索按钮的设置">
+<meta property="og:url" content="http://yuyouyou.github.io/2017/09/27/mobile1/index.html">
 <meta property="og:site_name" content="余幼幼的博客">
-<meta property="og:description" content="description">
+<meta property="og:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;最近遇到一个关于input type=search的问题，在网上找到一个很好的解决方案，贴出来记录一下。
+问题：&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;设计搜索框时，如果单单使用input type=search 会导致一些手机的输入法不显示搜索按钮只显示换行如：">
+<meta property="og:image" content="http://yuyouyou.github.io/../images/mobile1.jpeg">
+<meta property="og:image" content="http://yuyouyou.github.io/../images/mobile2.jpeg">
+<meta property="og:updated_time" content="2019-01-15T03:08:05.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="余幼幼的博客">
-<meta name="twitter:description" content="description">
+<meta name="twitter:title" content="H5 input type=search 搜索按钮的设置">
+<meta name="twitter:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;最近遇到一个关于input type=search的问题，在网上找到一个很好的解决方案，贴出来记录一下。
+问题：&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;设计搜索框时，如果单单使用input type=search 会导致一些手机的输入法不显示搜索按钮只显示换行如：">
+<meta name="twitter:image" content="http://yuyouyou.github.io/../images/mobile1.jpeg">
   
     <link rel="alternative" href="/atom.xml" title="余幼幼的博客" type="application/atom+xml">
   
@@ -150,33 +157,33 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-node-inspector" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-mobile1" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/25/node-inspector/">使用 node-inspector 调试 Node.js</a>
+    <h1 class="article-title" itemprop="name">
+      H5 input type=search 搜索按钮的设置
     </h1>
   
 
         
-        <a href="/2017/06/25/node-inspector/" class="archive-article-date">
-  	<time datetime="2017-06-25T13:31:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-25</time>
+        <a href="/2017/09/27/mobile1/" class="archive-article-date">
+  	<time datetime="2017-09-27T02:21:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-27</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;最近在看书籍《Node.js开发指南》，看到一个调试工具还不错，简单介绍一下：node-inspector。</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;<code>node-inspector</code> 是一个完全基于 Node.js 的开源在线调试工具，提供了强大的调试功能和友好的用户界面，它的使用方法十分简便。<br>
-        
-          <a class="article-more-a" href="/2017/06/25/node-inspector/#more">more >></a>
-        
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;最近遇到一个关于input type=search的问题，在网上找到一个很好的解决方案，贴出来记录一下。</p>
+<p>问题：<br>&nbsp;&nbsp;&nbsp;&nbsp;设计搜索框时，如果单单使用input type=search 会导致一些手机的输入法不显示搜索按钮只显示换行如：<br><a id="more"></a><br><img src="/../images/mobile1.jpeg" alt=""></p>
+<p>解决办法：<br>&nbsp;&nbsp;&nbsp;&nbsp;在input标签外嵌套form标签即可解决。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;form action=<span class="string">"#"</span>&gt;</div><div class="line">    &lt;input type="search" /&gt;</div><div class="line">&lt;/form&gt;</div></pre></td></tr></table></figure></p>
+<p><img src="/../images/mobile2.jpeg" alt=""></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;但是，要注意：<br>&nbsp;&nbsp;&nbsp;&nbsp;如果<code>&lt;form&gt;&lt;/form&gt;</code>表单中只有一个<code>&lt;input type=&quot;text&quot;/&gt;</code>，则使文本框获取焦点，并单击回车，form会自动提交。提交路径为action属性拼接到当前路径（action属性默认为空字符串，如果form没有action属性，则提交路径与当前路径相同）。解决办法：<br>1、设置成<code>&lt;form onsubmit=&quot;return false;&quot;&gt;</code><br>2、增加一个无name属性的隐藏文本框<code>&lt;input type=&quot;text&quot; style=&quot;display:none;/&gt;</code><br>3、监听input的keydown事件。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">input.addEventListener(<span class="string">'keydown'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> keywd = e.target.value;</div><div class="line">    <span class="keyword">if</span>(event.keyCode == <span class="number">13</span> &amp;&amp; keywd) &#123; </div><div class="line">        e.preventDefault();</div><div class="line">    &#125; </div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>原文：<a href="https://blog.csdn.net/newbietao/article/details/78222917" target="_blank" rel="external">https://blog.csdn.net/newbietao/article/details/78222917</a></p>
+
       
 
       
@@ -189,7 +196,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">node调试工具</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">mobile</a>
         		</li>
       		
 		</ul>
@@ -198,18 +205,74 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/06/25/node-inspector/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yuyouyou.github.io/2017/09/27/mobile1/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
 
-
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2017/09/23/mobile/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">移动WEB常见问题解决方案</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
 
 
@@ -217,154 +280,27 @@
 
 
   
-    <article id="post-node-update" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/25/node-update/">一行命令轻松完成Node.js版本升级</a>
-    </h1>
-  
-
-        
-        <a href="/2017/06/25/node-update/" class="archive-article-date">
-  	<time datetime="2017-06-25T02:02:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;Node.js的开发非常活跃，它的最新稳定版本也频繁变化，时不时会发现，一个模块不能在你当前的Node版本上使用，此时就需要升级Node，而且有的项目运行也对Node版本要求不一样，可能会需要频繁的切换版本，所以呢，下面介绍一种非常简单的方法来管理你的Node版本，即使用Node Binary管理模块“n”。<br>
-        
-          <a class="article-more-a" href="/2017/06/25/node-update/#more">more >></a>
-        
-      
-
-      
+    <div class="duoshuo">
+        <!-- 多说评论框 start -->
+            <div class="ds-thread" data-thread-key="mobile1" data-title="H5 input type=search 搜索按钮的设置" data-url="/2017/09/27/mobile1/"></div>
+        <!-- 多说评论框 end -->
+        <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+        var duoshuoQuery = {short_name:"yuyouyou"};
+            (function() {
+                var ds = document.createElement('script');
+                ds.type = 'text/javascript';ds.async = true;
+                ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+                ds.charset = 'UTF-8';
+                (document.getElementsByTagName('head')[0]
+                 || document.getElementsByTagName('body')[0]).appendChild(ds);
+            })();
+            </script>
+        <!-- 多说公共JS代码 end -->
     </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">node</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/06/25/node-update/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-ajax-jsonp" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/12/ajax-jsonp/">jsonp 请求，捕获异常处理</a>
-    </h1>
   
 
-        
-        <a href="/2017/06/12/ajax-jsonp/" class="archive-article-date">
-  	<time datetime="2017-06-12T15:31:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>问题：<br>&nbsp;&nbsp;&nbsp;&nbsp;ajax 用 jsonp 方式时，当请求的url为404或者50X时，不会执行 error 的回调事件。</p>
-<p>原因：<br>&nbsp;&nbsp;&nbsp;&nbsp;当资源404，或者报错的时候，也就是返回不成功的时候， jsonp 是无法得到状态，不会进 success，也不会进 error 方法。有人会说 script 的话，有 onerror 方法，但是这个方法有浏览器兼容问题。<br>
-        
-          <a class="article-more-a" href="/2017/06/12/ajax-jsonp/#more">more >></a>
-        
-      
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">ajax</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">jsonp</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/06/12/ajax-jsonp/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-  
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
-    </nav>
-  
-
-<script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?3a4e1ad0a1208dbdb5baa27e3f9c262d";
-  var s = document.getElementsByTagName("script")[0];
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
 
 
           </div>
@@ -386,8 +322,8 @@ var _hmt = _hmt || [];
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
