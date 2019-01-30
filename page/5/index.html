@@ -152,6 +152,71 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-web-security" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/08/web-security/">CSRF攻击和防御</a>
+    </h1>
+  
+
+        
+        <a href="/2017/07/08/web-security/" class="archive-article-date">
+  	<time datetime="2017-07-08T14:12:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;CSRF中文名称：跨站请求伪造，攻击者盗用客户的身份，以客户名义发送恶意请求。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;攻击者借用你的权限，以你的名义发送恶意请求，并没有拿到你的用户信息，对服务器来说这个请求是完全合法的，但是却完成了攻击者所期望的一个操作，比如以你的名义发送邮件、发消息，盗取你的账号，添加系统管理员，甚至于购买商品、虚拟货币转账等。 如下：其中Web A为存在CSRF漏洞的网站，Web B为攻击者构建的恶意网站，User C为Web A网站的合法用户。
+        
+          <a class="article-more-a" href="/2017/07/08/web-security/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">web安全</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/07/08/web-security/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-node-inspector" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -264,75 +329,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2017/06/25/node-update/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-ajax-jsonp" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/12/ajax-jsonp/">jsonp 请求，捕获异常处理</a>
-    </h1>
-  
-
-        
-        <a href="/2017/06/12/ajax-jsonp/" class="archive-article-date">
-  	<time datetime="2017-06-12T15:31:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>问题：<br>&nbsp;&nbsp;&nbsp;&nbsp;ajax 用 jsonp 方式时，当请求的url为404或者50X时，不会执行 error 的回调事件。</p>
-<p>原因：<br>&nbsp;&nbsp;&nbsp;&nbsp;当资源404，或者报错的时候，也就是返回不成功的时候， jsonp 是无法得到状态，不会进 success，也不会进 error 方法。有人会说 script 的话，有 onerror 方法，但是这个方法有浏览器兼容问题。<br>
-        
-          <a class="article-more-a" href="/2017/06/12/ajax-jsonp/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">ajax</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">jsonp</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/06/12/ajax-jsonp/">展开全文 >></a>
         </p>
       
 
