@@ -152,6 +152,137 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-rendering" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/20/rendering/">后端模板渲染、客户端渲染、node中间层、服务器端渲染（ssr）</a>
+    </h1>
+  
+
+        
+        <a href="/2018/10/20/rendering/" class="archive-article-date">
+  	<time datetime="2018-10-20T13:20:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;前端与后端渲染方式的发展大致经历了这样几个阶段：后端模板渲染、客户端渲染、node中间层、服务器端渲染（ssr）。</p>
+<p>一、后端模板渲染</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;前端与后端最初的渲染方式是后端模板渲染，就是由后端使用模板引擎渲染好 html 后，返回给前端，前端再用 js 去操作 dom 或者渲染其他动态的部分。这个过程大致分成以下几个步骤：<br>
+        
+          <a class="article-more-a" href="/2018/10/20/rendering/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">渲染</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/10/20/rendering/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-es6-retry" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/12/es6-retry/">ES6 Promise Retry模式实现</a>
+    </h1>
+  
+
+        
+        <a href="/2018/10/12/es6-retry/" class="archive-article-date">
+  	<time datetime="2018-10-12T03:00:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>原文：<a href="https://blog.csdn.net/evan2916/article/details/82597671">https://blog.csdn.net/evan2916/article/details/82597671</a></p>
+<p>假设有一个异步获取数据的请求每次都在500ms后失败， 报错“server unavailable”。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fetchData</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;</div><div class="line">    setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">      reject(<span class="string">'server unavailable'</span>);</div><div class="line">    &#125;, <span class="number">500</span>);</div><div class="line">  &#125;);</div></pre></td></tr></table></figure></p>
+        
+          <a class="article-more-a" href="/2018/10/12/es6-retry/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">promise</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/10/12/es6-retry/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-reactjs1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -217,140 +348,9 @@
 
 
   
-    <article id="post-reactjs" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/02/reactjs/">学习react.js (笔记一)</a>
-    </h1>
-  
-
-        
-        <a href="/2018/03/02/reactjs/" class="archive-article-date">
-  	<time datetime="2018-03-02T01:45:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>一、React.js 简介</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;官方的介绍就不说了，只要明白React.js 不是一个框架，它只是一个库。它只提供 UI （view）层面的解决方案，所以从这种意义上来讲，它并不是一个完整的MVC，MVVM框架。在实际的项目当中，它并不能解决我们所有的问题，需要结合其它的库，例如 Redux、React-router 等来协助提供完整的解决方法。</p>
-<p>二、React.js 安装</p>
-<p>直接使用官网所推荐使用的工具来安装：
-        
-          <a class="article-more-a" href="/2018/03/02/reactjs/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">react.js</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/03/02/reactjs/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-mobile3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/16/mobile3/">解决移动端页面滚动后不触发touchend事件</a>
-    </h1>
-  
-
-        
-        <a href="/2017/10/16/mobile3/" class="archive-article-date">
-  	<time datetime="2017-10-16T06:54:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>问题：<br>&nbsp;&nbsp;&nbsp;&nbsp;在移动端页面进行优化时，一般使用touch事件替代鼠标相关事件，用的较多的是使用touchend事件替代PC端的click和mouseup事件。<br>&nbsp;&nbsp;&nbsp;&nbsp;但是，touchend事件在页面滚动时有个问题。在滚动完成后，如果当前触点的位置所指的元素绑定了touchend事件，这时便会触发该元素的touchend事件，造成误操作。<br>
-        
-          <a class="article-more-a" href="/2017/10/16/mobile3/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">mobile</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/10/16/mobile3/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 
@@ -548,6 +548,14 @@ var _hmt = _hmt || [];
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">react.js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">promise</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">渲染</a>
               </li>
             
             <div class="clearfix"></div>

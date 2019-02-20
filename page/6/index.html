@@ -152,6 +152,135 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-node-inspector" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/25/node-inspector/">使用 node-inspector 调试 Node.js</a>
+    </h1>
+  
+
+        
+        <a href="/2017/06/25/node-inspector/" class="archive-article-date">
+  	<time datetime="2017-06-25T13:31:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;最近在看书籍《Node.js开发指南》，看到一个调试工具还不错，简单介绍一下：node-inspector。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<code>node-inspector</code> 是一个完全基于 Node.js 的开源在线调试工具，提供了强大的调试功能和友好的用户界面，它的使用方法十分简便。<br>
+        
+          <a class="article-more-a" href="/2017/06/25/node-inspector/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">node调试工具</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/06/25/node-inspector/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-node-update" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/25/node-update/">一行命令轻松完成Node.js版本升级</a>
+    </h1>
+  
+
+        
+        <a href="/2017/06/25/node-update/" class="archive-article-date">
+  	<time datetime="2017-06-25T02:02:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;Node.js的开发非常活跃，它的最新稳定版本也频繁变化，时不时会发现，一个模块不能在你当前的Node版本上使用，此时就需要升级Node，而且有的项目运行也对Node版本要求不一样，可能会需要频繁的切换版本，所以呢，下面介绍一种非常简单的方法来管理你的Node版本，即使用Node Binary管理模块“n”。<br>
+        
+          <a class="article-more-a" href="/2017/06/25/node-update/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">node</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/06/25/node-update/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-ajax-jsonp" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -221,142 +350,9 @@
 
 
   
-    <article id="post-ajax-window-open" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/12/ajax-window-open/">Ajax请求成功后使用window.open()新开窗口被拦截</a>
-    </h1>
-  
-
-        
-        <a href="/2017/06/12/ajax-window-open/" class="archive-article-date">
-  	<time datetime="2017-06-12T15:01:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;我最近做一个下载文件需求时，使用 ajax 异步请求成功后新开窗口打开下载url，使用的是 window.open() 方法，发现浏览器会拦截，在网上找了很久的原因才知道：因为该操作并不是用户主动触发的，所以浏览器认为这是不安全的就拦截了，即使 ajax 回调函数中模拟执行 click 或者 submit 等用户行为（trigger(‘click’)），浏览器也会认为不是由用户主动触发的，因此不能被安全执行，所以被拦截。</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;在网上找了很多解决办法，以下两个是最有效的，解决了我的问题：<br>
-        
-          <a class="article-more-a" href="/2017/06/12/ajax-window-open/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">ajax</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">window</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/06/12/ajax-window-open/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-review-js4" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/05/31/review-js4/">回顾JavaScript基础知识 — 闭包和垃圾回收机制</a>
-    </h1>
-  
-
-        
-        <a href="/2017/05/31/review-js4/" class="archive-article-date">
-  	<time datetime="2017-05-31T13:02:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-31</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;闭包是 JavaScript 一个非常重要的特性，这意味着当前作用域总是能够访问外部作用域中的变量，比如函数a的内部函数b被函数a外的一个变量引用的时候，就创建了一个闭包。文字上不好理解，就看下面的示例：
-        
-          <a class="article-more-a" href="/2017/05/31/review-js4/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/05/31/review-js4/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/5/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/7/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/5/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/7/">Next &raquo;</a>
     </nav>
   
 
@@ -554,6 +550,14 @@ var _hmt = _hmt || [];
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">react.js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">promise</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">渲染</a>
               </li>
             
             <div class="clearfix"></div>
