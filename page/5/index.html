@@ -152,32 +152,30 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-cookie-session" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-js-notification" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/16/cookie-session/">Cookie、Session的区别</a>
+      <a class="article-title" href="/2017/09/11/js-notification/">js实现浏览器通知功能</a>
     </h1>
   
 
         
-        <a href="/2017/07/16/cookie-session/" class="archive-article-date">
-  	<time datetime="2017-07-16T13:00:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-16</time>
+        <a href="/2017/09/11/js-notification/" class="archive-article-date">
+  	<time datetime="2017-09-11T02:12:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-11</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>1、存取方式的不同</p>
-<ul>
-<li>Cookie中只能保管ASCII字符串，假如需要存取Unicode字符或者二进制数据，需求先进行编码。Cookie中也不能直接存取Java对象。若要存储略微复杂的信息，运用Cookie是比较艰难的。</li>
-<li>Session中能够存取任何类型的数据，包括不限于String、Integer、List、Map等。Session中也能够直接保管Java Bean乃至任何Java类、对象等，运用起来十分便当。能够把Session看做是一个Java容器类。
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;最近在做一个IM聊天系统，当新消息到来，需要在用户的桌面显示通知信息，在网上查阅才知道还有这个Notification API，下面介绍一下这个API。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;首先我们需要检查浏览器是否支持这个API，可以直接用 <code>window.Notification</code> 来判断，如果为true就说明支持啦。。。光支持也不行，如果浏览器不允许弹出通知消息，那也是白搭的，所以，我们还要判断是否被准许—<code>Notification.permission !== &quot;denied&quot;</code> 来判断权限。<br>
         
-          <a class="article-more-a" href="/2017/07/16/cookie-session/#more">more >></a>
+          <a class="article-more-a" href="/2017/09/11/js-notification/#more">more >></a>
         
       
 
@@ -191,7 +189,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">本地存储</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">notification</a>
         		</li>
       		
 		</ul>
@@ -201,7 +199,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/16/cookie-session/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/09/11/js-notification/">展开全文 >></a>
         </p>
       
 
@@ -219,30 +217,30 @@
 
 
   
-    <article id="post-web-security1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-css-align" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/08/web-security1/">XSS攻击和防御</a>
+      <a class="article-title" href="/2017/07/23/css-align/">水平和垂直居中(笔记)</a>
     </h1>
   
 
         
-        <a href="/2017/07/08/web-security1/" class="archive-article-date">
-  	<time datetime="2017-07-08T15:04:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-08</time>
+        <a href="/2017/07/23/css-align/" class="archive-article-date">
+  	<time datetime="2017-07-23T02:55:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-23</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;XSS中文名称：跨站脚本攻击，就是通过向网站写入js脚本来实现攻击。攻击者在Web页面里插入恶意html代码，当用户浏览该网页时，嵌入其中代码会被执行，从而达到攻击用户的目的。</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;举一个例子，我在一个博客网站正常发表一篇文章，输入汉字、英文和图片，完全没有问题。但是如果我写的是恶意的 JS 脚本，例如获取到document.cookie然后传输到自己的服务器上，那我这篇博客的每一次浏览都会执行这个脚本，都会把访客 cookie 中的信息偷偷传递到我的服务器上来。
+        <p>一、水平居中</p>
+<p>1、inline 元素用text-align: center;即可，如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.container &#123;</div><div class="line">   text-align: center;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
         
-          <a class="article-more-a" href="/2017/07/08/web-security1/#more">more >></a>
+          <a class="article-more-a" href="/2017/07/23/css-align/#more">more >></a>
         
       
 
@@ -256,7 +254,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">web安全</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">布局</a>
         		</li>
       		
 		</ul>
@@ -266,7 +264,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/08/web-security1/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/07/23/css-align/">展开全文 >></a>
         </p>
       
 
@@ -284,30 +282,31 @@
 
 
   
-    <article id="post-web-security" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-BFC-IFC" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/08/web-security/">CSRF攻击和防御</a>
+      <a class="article-title" href="/2017/07/23/BFC-IFC/">BFC和IFC(笔记)</a>
     </h1>
   
 
         
-        <a href="/2017/07/08/web-security/" class="archive-article-date">
-  	<time datetime="2017-07-08T14:12:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-08</time>
+        <a href="/2017/07/23/BFC-IFC/" class="archive-article-date">
+  	<time datetime="2017-07-23T02:12:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-23</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;CSRF中文名称：跨站请求伪造，攻击者盗用客户的身份，以客户名义发送恶意请求。</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;攻击者借用你的权限，以你的名义发送恶意请求，并没有拿到你的用户信息，对服务器来说这个请求是完全合法的，但是却完成了攻击者所期望的一个操作，比如以你的名义发送邮件、发消息，盗取你的账号，添加系统管理员，甚至于购买商品、虚拟货币转账等。 如下：其中Web A为存在CSRF漏洞的网站，Web B为攻击者构建的恶意网站，User C为Web A网站的合法用户。
+        <p>一、BFC</p>
+<p>什么是BFC？BFC的全称是Block Formatting Context，直译过来是：块级格式化上下文。</p>
+<p>BFC的布局规矩：
         
-          <a class="article-more-a" href="/2017/07/08/web-security/#more">more >></a>
+          <a class="article-more-a" href="/2017/07/23/BFC-IFC/#more">more >></a>
         
       
 
@@ -321,7 +320,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">web安全</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">布局</a>
         		</li>
       		
 		</ul>
@@ -331,7 +330,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/08/web-security/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/07/23/BFC-IFC/">展开全文 >></a>
         </p>
       
 
@@ -351,7 +350,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
     </nav>
   
 
@@ -561,6 +560,22 @@ var _hmt = _hmt || [];
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">flutter</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">权限</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">this</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">浅拷贝</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">深拷贝</a>
               </li>
             
             <div class="clearfix"></div>

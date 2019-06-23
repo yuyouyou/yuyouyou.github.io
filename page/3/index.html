@@ -152,30 +152,161 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-mobile1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-reactjs1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/27/mobile1/">H5 input type=search 搜索按钮的设置</a>
+      <a class="article-title" href="/2018/03/05/reactjs1/">学习react.js (笔记二)</a>
     </h1>
   
 
         
-        <a href="/2017/09/27/mobile1/" class="archive-article-date">
-  	<time datetime="2017-09-27T02:21:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-27</time>
+        <a href="/2018/03/05/reactjs1/" class="archive-article-date">
+  	<time datetime="2018-03-05T02:08:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-05</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;最近遇到一个关于input type=search的问题，在网上找到一个很好的解决方案，贴出来记录一下。</p>
-<p>问题：<br>&nbsp;&nbsp;&nbsp;&nbsp;设计搜索框时，如果单单使用input type=search 会导致一些手机的输入法不显示搜索按钮只显示换行如：<br>
+        <p>一、生命周期</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;我们一般会把组件的 state 的初始化工作放在 constructor 里面去做；在 componentWillMount 进行组件的启动工作，例如 Ajax 数据拉取、定时器的启动；组件从页面上销毁的时候，有时候需要一些数据的清理，例如定时器的清理，就会放在 componentWillUnmount 里面去做。componentDidMount 。一般来说，有些组件的启动工作是依赖 DOM 的，例如动画的启动，而 componentWillMount 的时候组件还没挂载完成，所以没法进行这些启动工作，这时候就可以把这些操作放在 componentDidMount 当中。后面会专门写生命周期的详细介绍，现在先理解下面这张图就行。
         
-          <a class="article-more-a" href="/2017/09/27/mobile1/#more">more >></a>
+          <a class="article-more-a" href="/2018/03/05/reactjs1/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">react.js</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/03/05/reactjs1/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-reactjs" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/02/reactjs/">学习react.js (笔记一)</a>
+    </h1>
+  
+
+        
+        <a href="/2018/03/02/reactjs/" class="archive-article-date">
+  	<time datetime="2018-03-02T01:45:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>一、React.js 简介</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;官方的介绍就不说了，只要明白React.js 不是一个框架，它只是一个库。它只提供 UI （view）层面的解决方案，所以从这种意义上来讲，它并不是一个完整的MVC，MVVM框架。在实际的项目当中，它并不能解决我们所有的问题，需要结合其它的库，例如 Redux、React-router 等来协助提供完整的解决方法。</p>
+<p>二、React.js 安装</p>
+<p>直接使用官网所推荐使用的工具来安装：
+        
+          <a class="article-more-a" href="/2018/03/02/reactjs/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">react.js</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/03/02/reactjs/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-mobile3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/16/mobile3/">解决移动端页面滚动后不触发touchend事件</a>
+    </h1>
+  
+
+        
+        <a href="/2017/10/16/mobile3/" class="archive-article-date">
+  	<time datetime="2017-10-16T06:54:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>问题：<br>&nbsp;&nbsp;&nbsp;&nbsp;在移动端页面进行优化时，一般使用touch事件替代鼠标相关事件，用的较多的是使用touchend事件替代PC端的click和mouseup事件。<br>&nbsp;&nbsp;&nbsp;&nbsp;但是，touchend事件在页面滚动时有个问题。在滚动完成后，如果当前触点的位置所指的元素绑定了touchend事件，这时便会触发该元素的touchend事件，造成误操作。<br>
+        
+          <a class="article-more-a" href="/2017/10/16/mobile3/#more">more >></a>
         
       
 
@@ -199,137 +330,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/09/27/mobile1/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-mobile" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/23/mobile/">移动WEB常见问题解决方案</a>
-    </h1>
-  
-
-        
-        <a href="/2017/09/23/mobile/" class="archive-article-date">
-  	<time datetime="2017-09-23T13:02:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>1、H5页面窗口自动调整到设备宽度，并禁止用户缩放页面<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta name=<span class="string">"viewport"</span> content=<span class="string">"width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"</span> /&gt;</div></pre></td></tr></table></figure></p>
-<p>2、忽略将页面中的数字识别为电话号码
-        
-          <a class="article-more-a" href="/2017/09/23/mobile/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">mobile</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/09/23/mobile/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-js-notification" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/11/js-notification/">js实现浏览器通知功能</a>
-    </h1>
-  
-
-        
-        <a href="/2017/09/11/js-notification/" class="archive-article-date">
-  	<time datetime="2017-09-11T02:12:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;最近在做一个IM聊天系统，当新消息到来，需要在用户的桌面显示通知信息，在网上查阅才知道还有这个Notification API，下面介绍一下这个API。</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;首先我们需要检查浏览器是否支持这个API，可以直接用 <code>window.Notification</code> 来判断，如果为true就说明支持啦。。。光支持也不行，如果浏览器不允许弹出通知消息，那也是白搭的，所以，我们还要判断是否被准许—<code>Notification.permission !== &quot;denied&quot;</code> 来判断权限。<br>
-        
-          <a class="article-more-a" href="/2017/09/11/js-notification/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">notification</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/09/11/js-notification/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/10/16/mobile3/">展开全文 >></a>
         </p>
       
 
@@ -349,7 +350,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
     </nav>
   
 
@@ -559,6 +560,22 @@ var _hmt = _hmt || [];
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">flutter</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">权限</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">this</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">浅拷贝</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">深拷贝</a>
               </li>
             
             <div class="clearfix"></div>

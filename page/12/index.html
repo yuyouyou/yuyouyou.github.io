@@ -152,38 +152,30 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-github-hexo" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-windows-mongodb" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2015/09/23/github-hexo/">GitHub+Hexo搭建个人博客</a>
+      <a class="article-title" href="/2016/04/05/windows-mongodb/">windows下MongoDB的安装及配置</a>
     </h1>
   
 
         
-        <a href="/2015/09/23/github-hexo/" class="archive-article-date">
-  	<time datetime="2015-09-23T02:47:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-09-23</time>
+        <a href="/2016/04/05/windows-mongodb/" class="archive-article-date">
+  	<time datetime="2016-04-05T05:49:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-04-05</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h5 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h5><ul>
-<li>安装Git</li>
-<li>安装Node.js</li>
-</ul>
-<p>PS：傻瓜式的安装即可。。。</p>
-<h5 id="申请GitHub"><a href="#申请GitHub" class="headerlink" title="申请GitHub"></a>申请GitHub</h5><ul>
-<li>进入<a href="https://github.com/">GitHub</a>官网注册帐号</li>
-<li>注册完成后，点击”New repository”，新建一个版本库</li>
-</ul>
-<p><img src="/../images/first-1.png" alt=""></p>
+        <p>1、进入mongodb官网进行软件包下载。</p>
+<p><img src="/../images/fifth-1.png" alt=""></p>
         
-          <a class="article-more-a" href="/2015/09/23/github-hexo/#more">more >></a>
+          <a class="article-more-a" href="/2016/04/05/windows-mongodb/#more">more >></a>
         
       
 
@@ -197,7 +189,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">MongoDB</a>
         		</li>
       		
 		</ul>
@@ -207,7 +199,145 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2015/09/23/github-hexo/">展开全文 >></a>
+          <a class="article-more-a" href="/2016/04/05/windows-mongodb/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-smarty" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/23/smarty/">smarty学习笔记</a>
+    </h1>
+  
+
+        
+        <a href="/2016/03/23/smarty/" class="archive-article-date">
+  	<time datetime="2016-03-23T10:19:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-03-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>日期格式</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">&#123;%$time|date_format:<span class="string">'%Y-%m-%d'</span>%&#125; 格式为<span class="number">2016</span><span class="number">-08</span><span class="number">-03</span></div><div class="line">&#123;%$time|date_format:<span class="string">'%H:%M:%S'</span>%&#125; 格式为<span class="number">14</span>:<span class="number">33</span>:<span class="number">00</span></div><div class="line"></div><div class="line">常见的：</div><div class="line">%Y 年, 数字, <span class="number">4</span> 位</div><div class="line">%y 年, 数字, <span class="number">2</span> 位</div><div class="line">%m 月份, 数字(<span class="number">01</span>……<span class="number">12</span>)</div><div class="line">%c 月份, 数字(<span class="number">1</span>……<span class="number">12</span>)</div><div class="line">%b 缩写的月份名字(Jan……Dec)</div><div class="line">%d 月份中的天数, 数字(<span class="number">00</span>……<span class="number">31</span>)</div><div class="line">%e 月份中的天数, 数字(<span class="number">0</span>……<span class="number">31</span>)</div><div class="line">%H 小时(<span class="number">00</span>……<span class="number">23</span>)</div><div class="line">%k 小时(<span class="number">0</span>……<span class="number">23</span>)</div><div class="line">%I 小时(<span class="number">01</span>……<span class="number">12</span>)</div><div class="line">%l 小时(<span class="number">1</span>……<span class="number">12</span>)</div><div class="line">%M 分钟(<span class="number">00</span>……<span class="number">59</span>)</div><div class="line">%S 秒(<span class="number">00</span>……<span class="number">59</span>)</div><div class="line">%w 星期名字(Sunday……Saturday)</div><div class="line">%a 缩写的星期名字(Sun……Sat)</div></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2016/03/23/smarty/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">smarty</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/03/23/smarty/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-front-cold" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/18/front-cold/">前端冷知识</a>
+    </h1>
+  
+
+        
+        <a href="/2016/02/18/front-cold/" class="archive-article-date">
+  	<time datetime="2016-02-18T02:44:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-02-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li><p>浏览器地址栏运行JavaScript代码</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">javascript:alert(<span class="string">'hello from address bar :)'</span>);</div></pre></td></tr></table></figure>
+</li>
+<li><p>浏览器地址栏运行HTML代码</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">data:text/html,&lt;h1&gt;Hello, world!&lt;/h1&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+        
+          <a class="article-more-a" href="/2016/02/18/front-cold/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/02/18/front-cold/">展开全文 >></a>
         </p>
       
 
@@ -227,7 +357,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/11/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><span class="page-number current">12</span>
+      <a class="extend prev" rel="prev" href="/page/11/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><span class="page-number current">12</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/13/">Next &raquo;</a>
     </nav>
   
 
@@ -437,6 +567,22 @@ var _hmt = _hmt || [];
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">flutter</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">权限</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">this</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">浅拷贝</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">深拷贝</a>
               </li>
             
             <div class="clearfix"></div>

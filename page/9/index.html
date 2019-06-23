@@ -152,29 +152,30 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-js-style" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-review-js3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/17/js-style/">JavaScript风格指南</a>
+      <a class="article-title" href="/2017/05/30/review-js3/">回顾JavaScript基础知识 — 变量提升</a>
     </h1>
   
 
         
-        <a href="/2017/03/17/js-style/" class="archive-article-date">
-  	<time datetime="2017-03-17T02:25:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-17</time>
+        <a href="/2017/05/30/review-js3/" class="archive-article-date">
+  	<time datetime="2017-05-30T13:56:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-30</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><a href="https://github.com/ryanmcdermott">作者</a>根据Robert C. Martin<a href="https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882"><em>《代码整洁之道》</em></a>总结了适用于JavaScript的软件工程原则<a href="https://github.com/ryanmcdermott/clean-code-javascript">《Clean Code JavaScript》</a>。<br>本文是对其的翻译。<br>不必严格遵守本文的所有原则，有时少遵守一些效果可能会更好，具体应根据实际情况决定。这是根据《代码整洁之道》作者多年经验整理的代码优化建议，但也仅仅只是一份建议。<br>软件工程已经发展了50多年，至今仍在不断前进。现在，把这些原则当作试金石，尝试将他们作为团队代码质量考核的标准之一吧。<br>最后你需要知道的是，这些东西不会让你立刻变成一个优秀的工程师，长期奉行他们也并不意味着你能够高枕无忧不再犯错。千里之行，始于足下。我们需要时常和同行们进行代码评审，不断优化自己的代码。不要惧怕改善代码质量所需付出的努力，加油。<br>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;JavaScript 中，函数声明和变量声明总是会被解释器悄悄地”提升”到方法体的最顶部。<br>&nbsp;&nbsp;&nbsp;&nbsp;JavaScript 中，变量可以在使用后声明，也就是变量可以先使用再声明。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;通过一个简单的代码示例解释一下
         
-          <a class="article-more-a" href="/2017/03/17/js-style/#more">more >></a>
+          <a class="article-more-a" href="/2017/05/30/review-js3/#more">more >></a>
         
       
 
@@ -198,7 +199,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/03/17/js-style/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/05/30/review-js3/">展开全文 >></a>
         </p>
       
 
@@ -216,93 +217,33 @@
 
 
   
-    <article id="post-reduce-loading" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-review-js2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/15/reduce-loading/">降低网页加载时间</a>
+      <a class="article-title" href="/2017/05/29/review-js2/">回顾JavaScript基础知识 — 原型和原型链</a>
     </h1>
   
 
         
-        <a href="/2017/03/15/reduce-loading/" class="archive-article-date">
-  	<time datetime="2017-03-15T07:36:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-15</time>
+        <a href="/2017/05/29/review-js2/" class="archive-article-date">
+  	<time datetime="2017-05-29T14:11:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-29</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;降低网页加载时间的方案太多了，在网上一查多的看不过来，所以我结合自身用到的以及网上的方案，来归纳一下吧，主要是一些前端能做的事情，以后get到新的方案，再不断添加吧。(╯▽╰)<br>&nbsp;&nbsp;&nbsp;&nbsp;其实网页加载就是请求HTML，再顺带将它依赖的资源文件（比如：JS/CSS/iconfont）一并请求过来。从概念出发，我们就可以得出降低网页加载时间，最本质的方式就是：减少请求数量 与 减小请求大小。<br>
+        <ul>
+<li><strong>原型</strong></li>
+</ul>
+<p>可以从下面这几个要点来理解，下面几条必须记住并且理解。</p>
+<p>1、所有的引用类型（数组、对象、函数），都具有对象特性，即可自由扩展属性（null除外）<br>2、所有的引用类型（数组、对象、函数），都有一个<code>__proto__</code>属性，属性值是一个普通的对象<br>3、所有的引用类型（数组、对象、函数），<code>__proto__</code>属性值指向它的构造函数的prototype属性值<br>4、所有的函数，都有一个prototype属性，属性值也是一个普通的对象<br>
         
-          <a class="article-more-a" href="/2017/03/15/reduce-loading/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">性能优化</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/03/15/reduce-loading/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-throttle" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/13/throttle/">函数节流与防抖</a>
-    </h1>
-  
-
-        
-        <a href="/2017/03/13/throttle/" class="archive-article-date">
-  	<time datetime="2017-03-13T02:04:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="函数节流"><a href="#函数节流" class="headerlink" title="函数节流"></a>函数节流</h5><p>&nbsp;&nbsp;&nbsp;&nbsp;我们网站经常会有这样的需求，就是滚动浏览器滚动条的时候，更新页面上的某些布局内容或者去调用后台的某接口查询内容。如果不对函数调用的频率加以限制的话，那么可能我们滚动一次滚动条就会产生N次的调用了。所以我们每间隔某个时间去执行某函数，避免函数的过多执行，这个方式就叫函数节流。<br>为了更好的理解这个概念，我们先来完成一个小需求，就是浏览器滚动条在滚动过程中打印n值：<br>
-        
-          <a class="article-more-a" href="/2017/03/13/throttle/#more">more >></a>
+          <a class="article-more-a" href="/2017/05/29/review-js2/#more">more >></a>
         
       
 
@@ -318,9 +259,73 @@
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
         		</li>
-      		 
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/05/29/review-js2/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-review-js1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/05/28/review-js1/">回顾JavaScript基础知识 — 变量类型</a>
+    </h1>
+  
+
+        
+        <a href="/2017/05/28/review-js1/" class="archive-article-date">
+  	<time datetime="2017-05-28T14:30:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;JavaScript是一种弱类型脚本语言，所谓弱类型指的是定义变量时，不需要什么类型，在程序运行过程中会自动判断类型。</p>
+<ul>
+<li><strong>原始类型</strong></li>
+</ul>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;ECMAScript中定义了 6 种原始类型，分别是Boolean、String、Number、Null 、Undefined、Symbol。<br>
+        
+          <a class="article-more-a" href="/2017/05/28/review-js1/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">性能优化</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
         		</li>
       		
 		</ul>
@@ -330,7 +335,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/03/13/throttle/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/05/28/review-js1/">展开全文 >></a>
         </p>
       
 
@@ -350,7 +355,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/8/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/10/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/8/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/10/">Next &raquo;</a>
     </nav>
   
 
@@ -560,6 +565,22 @@ var _hmt = _hmt || [];
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">flutter</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">权限</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">this</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">浅拷贝</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">深拷贝</a>
               </li>
             
             <div class="clearfix"></div>

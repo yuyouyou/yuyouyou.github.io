@@ -152,6 +152,74 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-data-cope" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/08/data-cope/">浅拷贝与深拷贝</a>
+    </h1>
+  
+
+        
+        <a href="/2019/05/08/data-cope/" class="archive-article-date">
+  	<time datetime="2019-05-08T01:10:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="一、数据类型"><a href="#一、数据类型" class="headerlink" title="一、数据类型"></a>一、数据类型</h4><p>数据分为基本数据类型(String, Number, Boolean, Null, Undefined，Symbol)和对象数据类型。<br>&nbsp;&nbsp;&nbsp;&nbsp;基本数据类型的特点：直接存储在栈(stack)中的数据<br>&nbsp;&nbsp;&nbsp;&nbsp;引用数据类型的特点：存储的是该对象在栈中引用，真实的数据存放在堆内存里<br>引用数据类型在栈中存储了指针，该指针指向堆中该实体的起始地址。当解释器寻找引用值时，会首先检索其在栈中的地址，取得地址后从堆中获得实体。
+        
+          <a class="article-more-a" href="/2019/05/08/data-cope/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">浅拷贝</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">深拷贝</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/05/08/data-cope/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-rendering" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -218,30 +286,30 @@
 
 
   
-    <article id="post-es6-retry" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-chmod" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/12/es6-retry/">ES6 Promise Retry模式实现</a>
+      <a class="article-title" href="/2018/10/22/chmod/">经常用的 chmod 755 ,你知道这是什么东东吗</a>
     </h1>
   
 
         
-        <a href="/2018/10/12/es6-retry/" class="archive-article-date">
-  	<time datetime="2018-10-12T03:00:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-12</time>
+        <a href="/2018/10/22/chmod/" class="archive-article-date">
+  	<time datetime="2018-10-22T15:31:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-22</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>原文：<a href="https://blog.csdn.net/evan2916/article/details/82597671">https://blog.csdn.net/evan2916/article/details/82597671</a></p>
-<p>假设有一个异步获取数据的请求每次都在500ms后失败， 报错“server unavailable”。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fetchData</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;</div><div class="line">    setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">      reject(<span class="string">'server unavailable'</span>);</div><div class="line">    &#125;, <span class="number">500</span>);</div><div class="line">  &#125;);</div></pre></td></tr></table></figure></p>
+        <p>首先看看Linux下的几种文件类型：</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<code>d</code> ：目录directory<br>&nbsp;&nbsp;&nbsp;&nbsp;<code>l</code> ：符号链接link<br>&nbsp;&nbsp;&nbsp;&nbsp;<code>s</code> ：套接字socket<br>&nbsp;&nbsp;&nbsp;&nbsp;<code>c</code> ：字符设备char<br>&nbsp;&nbsp;&nbsp;&nbsp;<code>p</code> ：命名管道pipe
         
-          <a class="article-more-a" href="/2018/10/12/es6-retry/#more">more >></a>
+          <a class="article-more-a" href="/2018/10/22/chmod/#more">more >></a>
         
       
 
@@ -255,7 +323,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">promise</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">权限</a>
         		</li>
       		
 		</ul>
@@ -265,72 +333,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/10/12/es6-retry/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-reactjs1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/05/reactjs1/">学习react.js (笔记二)</a>
-    </h1>
-  
-
-        
-        <a href="/2018/03/05/reactjs1/" class="archive-article-date">
-  	<time datetime="2018-03-05T02:08:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>一、生命周期</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;我们一般会把组件的 state 的初始化工作放在 constructor 里面去做；在 componentWillMount 进行组件的启动工作，例如 Ajax 数据拉取、定时器的启动；组件从页面上销毁的时候，有时候需要一些数据的清理，例如定时器的清理，就会放在 componentWillUnmount 里面去做。componentDidMount 。一般来说，有些组件的启动工作是依赖 DOM 的，例如动画的启动，而 componentWillMount 的时候组件还没挂载完成，所以没法进行这些启动工作，这时候就可以把这些操作放在 componentDidMount 当中。后面会专门写生命周期的详细介绍，现在先理解下面这张图就行。
-        
-          <a class="article-more-a" href="/2018/03/05/reactjs1/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">react.js</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/03/05/reactjs1/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/10/22/chmod/">展开全文 >></a>
         </p>
       
 
@@ -350,7 +353,7 @@
   
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 
@@ -560,6 +563,22 @@ var _hmt = _hmt || [];
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">flutter</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">权限</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">this</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">浅拷贝</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">深拷贝</a>
               </li>
             
             <div class="clearfix"></div>

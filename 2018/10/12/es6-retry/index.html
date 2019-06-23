@@ -8,19 +8,16 @@
   <link rel="dns-prefetch" href="http://yuyouyou.github.io">
   <title>ES6 Promise Retry模式实现 | 余幼幼的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="原文：https://blog.csdn.net/evan2916/article/details/82597671
-假设有一个异步获取数据的请求每次都在500ms后失败， 报错“server unavailable”。123456function fetchData() &amp;#123;  return new Promise(function(resolve, reject) &amp;#123;">
+  <meta name="description" content="假设有一个异步获取数据的请求每次都在500ms后失败， 报错“server unavailable”。123456function fetchData() &amp;#123;  return new Promise(function(resolve, reject) &amp;#123;    setTimeout(function() &amp;#123;      reject(&apos;server unavailabl">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ES6 Promise Retry模式实现">
 <meta property="og:url" content="http://yuyouyou.github.io/2018/10/12/es6-retry/index.html">
 <meta property="og:site_name" content="余幼幼的博客">
-<meta property="og:description" content="原文：https://blog.csdn.net/evan2916/article/details/82597671
-假设有一个异步获取数据的请求每次都在500ms后失败， 报错“server unavailable”。123456function fetchData() &amp;#123;  return new Promise(function(resolve, reject) &amp;#123;">
-<meta property="og:updated_time" content="2019-02-19T06:31:25.000Z">
+<meta property="og:description" content="假设有一个异步获取数据的请求每次都在500ms后失败， 报错“server unavailable”。123456function fetchData() &amp;#123;  return new Promise(function(resolve, reject) &amp;#123;    setTimeout(function() &amp;#123;      reject(&apos;server unavailabl">
+<meta property="og:updated_time" content="2019-06-23T09:14:35.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ES6 Promise Retry模式实现">
-<meta name="twitter:description" content="原文：https://blog.csdn.net/evan2916/article/details/82597671
-假设有一个异步获取数据的请求每次都在500ms后失败， 报错“server unavailable”。123456function fetchData() &amp;#123;  return new Promise(function(resolve, reject) &amp;#123;">
+<meta name="twitter:description" content="假设有一个异步获取数据的请求每次都在500ms后失败， 报错“server unavailable”。123456function fetchData() &amp;#123;  return new Promise(function(resolve, reject) &amp;#123;    setTimeout(function() &amp;#123;      reject(&apos;server unavailabl">
   
     <link rel="alternative" href="/atom.xml" title="余幼幼的博客" type="application/atom+xml">
   
@@ -174,12 +171,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>原文：<a href="https://blog.csdn.net/evan2916/article/details/82597671" target="_blank" rel="external">https://blog.csdn.net/evan2916/article/details/82597671</a></p>
-<p>假设有一个异步获取数据的请求每次都在500ms后失败， 报错“server unavailable”。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fetchData</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;</div><div class="line">    setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">      reject(<span class="string">'server unavailable'</span>);</div><div class="line">    &#125;, <span class="number">500</span>);</div><div class="line">  &#125;);</div></pre></td></tr></table></figure></p>
+        <p>假设有一个异步获取数据的请求每次都在500ms后失败， 报错“server unavailable”。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fetchData</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;</div><div class="line">    setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">      reject(<span class="string">'server unavailable'</span>);</div><div class="line">    &#125;, <span class="number">500</span>);</div><div class="line">  &#125;);</div></pre></td></tr></table></figure></p>
 <a id="more"></a>
 <p>假设我们最多重试3次就不再尝试发送该请求，每次重试间隔100ms。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// parameter #1, the function to return a Promise</span></div><div class="line"><span class="comment">// parameter #2, the max retry times</span></div><div class="line"><span class="comment">// parameter #3, the delay between each attempt</span></div><div class="line">retry(fetchData, <span class="number">3</span>, <span class="number">100</span>)</div></pre></td></tr></table></figure></p>
 <p>retry函数参数已确定，函数体具体实现如下：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">retry = <span class="function"><span class="keyword">function</span>(<span class="params">fn, times, delay</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> err = <span class="literal">null</span>;</div><div class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">var</span> attempt = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">      fn().then(resolve).catch(<span class="function"><span class="keyword">function</span>(<span class="params">err</span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">`Attempt #<span class="subst">$&#123;times&#125;</span> failed`</span>);</div><div class="line">        <span class="keyword">if</span> (<span class="number">0</span> == times) &#123;</div><div class="line">          reject(err);</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">          times--;</div><div class="line">          setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            attempt()</div><div class="line">          &#125;, delay);</div><div class="line">        &#125;</div><div class="line">      &#125;);</div><div class="line">    &#125;;</div><div class="line"></div><div class="line">    attempt();</div><div class="line"></div><div class="line">  &#125;);</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>原文：<a href="https://blog.csdn.net/evan2916/article/details/82597671" target="_blank" rel="external">https://blog.csdn.net/evan2916/article/details/82597671</a></p>
 
       
 
@@ -263,18 +260,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/01/07/rendering/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/10/22/chmod/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          后端模板渲染、客户端渲染、node中间层、服务器端渲染（ssr）
+          经常用的 chmod 755 ,你知道这是什么东东吗
         
       </div>
     </a>
   
   
-    <a href="/2018/03/05/reactjs1/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">学习react.js (笔记二)</div>
+    <a href="/2018/04/11/summary-this1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">改变 this 的指向</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -504,6 +501,22 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">flutter</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">权限</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">this</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">浅拷贝</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">深拷贝</a>
               </li>
             
             <div class="clearfix"></div>
